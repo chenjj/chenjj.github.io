@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web security on Jianjun Chen&#39;s Homepage</title>
+    <link>/categories/web-security/</link>
+    <description>Recent content in Web security on Jianjun Chen&#39;s Homepage</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Tue, 24 Jul 2018 12:56:52 +0800</lastBuildDate>
+    
+	<atom:link href="/categories/web-security/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CORS安全部署最佳实践</title>
+      <link>/post/cors%E5%AE%89%E5%85%A8%E9%83%A8%E7%BD%B2%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Tue, 24 Jul 2018 12:56:52 +0800</pubDate>
+      
+      <guid>/post/cors%E5%AE%89%E5%85%A8%E9%83%A8%E7%BD%B2%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+      <description>简介 CORS（Cross-Origin Resource Sharing, 跨域资源共享）是HTML5的一个新特性，用于解决浏览器跨域网络资源访问，目前已经被所有浏览器支持，</description>
+    </item>
+    
+    <item>
+      <title>CORS Secure Deployment Best Practice</title>
+      <link>/post/cors-secure-deployment-best-practice/</link>
+      <pubDate>Mon, 23 Jul 2018 13:40:04 +0800</pubDate>
+      
+      <guid>/post/cors-secure-deployment-best-practice/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

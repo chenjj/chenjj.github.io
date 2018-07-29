@@ -1,25 +1,221 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
-  <url>
-    <loc>http://chenjj.github.io/about/index.html</loc>
     
-    <lastmod>2016-06-18T09:44:49.000Z</lastmod>
     
-  </url>
+    <url>
+    
+      <loc>/zh/post/cors%E5%AE%89%E5%85%A8%E9%83%A8%E7%BD%B2%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</loc>
+      <lastmod>2018-07-24T22:36:45+08:00</lastmod>
+    </url>
+    
   
-  <url>
-    <loc>http://chenjj.github.io/2016/06/18/hello-world/</loc>
     
-    <lastmod>2016-06-18T08:45:35.000Z</lastmod>
     
-  </url>
+    <url>
+    
+      <loc>/post/cors%E5%AE%89%E5%85%A8%E9%83%A8%E7%BD%B2%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</loc>
+      <lastmod>2018-07-24T12:56:52+08:00</lastmod>
+    </url>
+    
   
-  <url>
-    <loc>http://chenjj.github.io/tags/index.html</loc>
     
-    <lastmod>2016-06-18T07:31:47.000Z</lastmod>
     
-  </url>
+    <url>
+    
+      <loc>/post/cors-secure-deployment-best-practice/</loc>
+      <lastmod>2018-07-23T13:40:04+08:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/publication/an-empirical-study-of-cors/</loc>
+      <lastmod>2018-07-22T11:23:39+08:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/post/</loc>
+      <lastmod>2017-01-01T00:00:00+08:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/zh/post/</loc>
+      <lastmod>2017-01-01T00:00:00+08:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/publication/</loc>
+      <lastmod>2017-01-01T00:00:00+08:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/talk/</loc>
+      <lastmod>2017-01-01T00:00:00+08:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/publication/host-of-troubles-multiple-host-ambiguities-in-http-implementations/</loc>
+      <lastmod>2016-10-22T11:18:39+08:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/publication/seeking-nonsense-looking-for-trouble-efficient-promotional-infection-detection-through-semantic-inconsistency-search/</loc>
+      <lastmod>2016-07-22T11:32:44+08:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/publication/forwarding-loop-attacks-in-content-delivery-networks/</loc>
+      <lastmod>2016-02-22T11:03:35+08:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/publication_types/1/</loc>
+      <lastmod>2018-07-22T11:23:39+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/cors/</loc>
+      <lastmod>2018-07-24T12:56:52+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/categories/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/english/</loc>
+      <lastmod>2018-07-23T13:40:04+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/</loc>
+      <lastmod>2016-04-20T00:00:00+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/publication_types/</loc>
+      <lastmod>2018-07-22T11:23:39+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/</loc>
+      <lastmod>2018-07-24T12:56:52+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/web/</loc>
+      <lastmod>2018-07-24T12:56:52+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/categories/web-security/</loc>
+      <lastmod>2018-07-24T22:36:45+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/categories/web-security/</loc>
+      <lastmod>2018-07-24T12:56:52+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/zh/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>/tags/%E4%B8%AD%E6%96%87/</loc>
+      <lastmod>2018-07-24T12:56:52+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
   
 </urlset>

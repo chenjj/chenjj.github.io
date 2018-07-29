@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jianjun Chen&#39;s Homepage on Jianjun Chen&#39;s Homepage</title>
+    <link>/</link>
+    <description>Recent content in Jianjun Chen&#39;s Homepage on Jianjun Chen&#39;s Homepage</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2018</copyright>
+    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0800</lastBuildDate>
+    <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>CORS安全部署最佳实践</title>
+      <link>/zh/post/cors%E5%AE%89%E5%85%A8%E9%83%A8%E7%BD%B2%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Tue, 24 Jul 2018 22:36:45 +0800</pubDate>
+      
+      <guid>/zh/post/cors%E5%AE%89%E5%85%A8%E9%83%A8%E7%BD%B2%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CORS安全部署最佳实践</title>
+      <link>/post/cors%E5%AE%89%E5%85%A8%E9%83%A8%E7%BD%B2%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Tue, 24 Jul 2018 12:56:52 +0800</pubDate>
+      
+      <guid>/post/cors%E5%AE%89%E5%85%A8%E9%83%A8%E7%BD%B2%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+      <description>
+
+&lt;p&gt;&lt;h2&gt;简介&lt;/h2&gt;
+CORS（Cross-Origin Resource Sharing, 跨域资源共享）是HTML5的一个新特性，用于解决浏览器跨域网络资源访问，目前已经被所有浏览器支持，并被主流网站广泛部署使用。&lt;/p&gt;
+
+&lt;p&gt;我们对CORS部署安全进行了系统研究，总结了7大类容易出错的 CORS 误配置问题，并对现实网络中CORS部署安全现状进行了评估。我们对Alex 排名前5万的域名以及超过9千多万个子域名进行了大规模测量，发现有&lt;strong&gt;27.5%的部署CORS 的网站存在误配置安全问题&lt;/strong&gt;，其中包括sohu.com、fedex.com、nasdaq.com等国内外知名网站。这些安全问题能够造成用户隐私泄露，信息窃取甚至账户劫持。 我们还测试分析了11款主流的 CORS 框架，发现其中10款框架都存在至少一类不安全配置。&lt;/p&gt;
+
+&lt;p&gt;本文总结 CORS 部署安全最佳实践，并提供一款开源自动化 CORS 误配置漏洞检测工具，为Web 开发人员和渗透测试人员避免和发现 CORS 不安全配置提供参考。&lt;/p&gt;
+
+&lt;h2&gt;Table of Contents&lt;/h2&gt;
+&lt;nav id=&#34;TableOfContents&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#一-背景&#34;&gt;一、背景&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#1-1-从-sop-到-cors&#34;&gt;1.1 从 SOP 到 CORS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#1-2-cors-简介&#34;&gt;1.2 CORS 简介&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#1-3-cors-基本用法&#34;&gt;1.3 CORS 基本用法&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#二-cors-错误配置问题总结&#34;&gt;二、CORS 错误配置问题总结&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#2-1-反射-origin头&#34;&gt;2.1 反射 Origin头&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#2-2-origin-校验错误&#34;&gt;2.2 Origin 校验错误&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#2-3-信任null&#34;&gt;2.3 信任null&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#2-4-https域信任http域&#34;&gt;2.4 HTTPS域信任HTTP域&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#2-5-信任自身任意子域&#34;&gt;2.5 信任自身任意子域&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#2-6-origin-与-credentials-true-共用&#34;&gt;2.6 Origin:*与 Credentials:true 共用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#2-7-缺少-vary-origin头&#34;&gt;2.7 缺少 Vary:Origin头&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#三-cors-部署现状评估&#34;&gt;三、CORS 部署现状评估&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#四-讨论与防御&#34;&gt;四、讨论与防御&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#4-1-标准组织与厂商响应&#34;&gt;4.1 标准组织与厂商响应&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#4-2-cors-部署最佳实践&#34;&gt;4.2 CORS 部署最佳实践&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#五-总结&#34;&gt;五、总结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#六-参考文献&#34;&gt;六、参考文献&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/nav&gt;
+
+
+&lt;h2 id=&#34;一-背景&#34;&gt;一、背景&lt;/h2&gt;
+
+&lt;h3 id=&#34;1-1-从-sop-到-cors&#34;&gt;1.1 从 SOP 到 CORS&lt;/h3&gt;
+
+&lt;p&gt;同源策略 (Same Origin Policy, SOP) 是 Web 最重要的安全机制，它保证了不同源(Origin，包括域名，端口和协议类型)的 Web 应用之间不能互相干扰。在SOP 的限制下，客户端脚本可以通过资源引用或者跨域表单提交向第三方服务器发送GET请求和POST请求，但是却不能读取响应内容。例如，在图1中，a.com网站脚本可以向 b.com 服务器发送 GET 请求，但是浏览器SOP会阻止其读取响应内容。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/blog/2018/SOP-network.png&#34; width=&#34;80%&#34; title=&#34;图1 同源策略默认阻止跨域读取响应内容&#34; style=&#34;margin-bottom:0px&#34;&gt;
+&lt;center&gt;图1 同源策略默认阻止跨域读取响应内容&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;随着Web应用的发展，Web开发者需要读取跨域网络资源内容(例如，电商网站想通过用户浏览器加载第三方快递网站的物流信息)，开发人员提出了一些临时折衷方案来满足需求，例如JSONP，但是这些折衷方案带来了许多安全问题。&lt;/p&gt;
+
+&lt;p&gt;于是W3C 设计了 CORS 协议标准，用于替代 JSONP，实现更安全规范地支持跨域网络资源共享。从2009年开始，CORS协议就已经被各大浏览器（如 Chrome， Firefox等）支持，目前已经被主流网站广泛部署使用。&lt;/p&gt;
+
+&lt;h3 id=&#34;1-2-cors-简介&#34;&gt;1.2 CORS 简介&lt;/h3&gt;
+
+&lt;p&gt;CORS 的基本原理是，第三方网站服务器生成访问控制策略，指导用户浏览器放宽 SOP 的限制，实现与指定的目标网站共享数据。具体工作流程可分为三步，如图2所示：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;请求方脚本从用户浏览器发送跨域请求。浏览器会自动在每个跨域请求中添加Origin头，用于声明请求方的源。&lt;/li&gt;
+&lt;li&gt;资源服务器根据请求中Origin头返回访问控制策略(Access-Control-Allow-Origin响应头)，并在其中声明允许读取响应内容的源。&lt;/li&gt;
+&lt;li&gt;浏览器检查资源服务器在Access-Control-Allow-Origin头中声明的源，是否与请求方的源相符，如果相符合，则允许请求方脚本读取响应内容，否则不允许。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/blog/2018/CORS-flow.png&#34; width=&#34;80%&#34; title=&#34;图2 CORS 工作流程示意图&#34; style=&#34;margin-bottom:0px&#34;&gt;
+&lt;center&gt;图2 CORS 工作流程示意图&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;在CORS协议中，请求方还可以指示浏览器在跨域请求中是否带credentials（包括Cookie，TLS客户端证书和代理验证信息）。如果跨域请求中带了credentials，那么浏览器会检查资源服务器返回的响应头中Access-Control-Allow-Credentials头是否设置为true，如果是，则允许请求方读取响应内容，否则，不允许。&lt;/p&gt;
+
+&lt;p&gt;关于CORS其它的细节，读者可以阅读 CORS标准，这里不再详述。&lt;/p&gt;
+
+&lt;h3 id=&#34;1-3-cors-基本用法&#34;&gt;1.3 CORS 基本用法&lt;/h3&gt;
+
+&lt;p&gt;当 b.com 服务器想要与 a.com 共享资源内容时，它只需要在 HTTP 响应中添加如下响应头。这个响应头告诉浏览器放宽 SOP 限制，允许a.com脚本读取响应内容：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-http&#34;&gt;Access-Control-Allow-Origin: http://a.com
+Access-Control-Allow-Credentials: true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;a.com 则可以通过以下Javascript 脚本，跨域读取 b.com 服务器的内容：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var xhr=new XMLHttpRequest();
+xhr.onreadystatechange = function() { 
+    if (xhr.readyState == XMLHttpRequest.DONE) { 
+        alert(xhr.responseText); 
+    } 
+}
+xhr.open(“GET“, ”http://b.com/api“, true);
+xhr.withCredentials = true;
+xhr.send();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;二-cors-错误配置问题总结&#34;&gt;二、CORS 错误配置问题总结&lt;/h2&gt;
+
+&lt;p&gt;CORS协议的本质是由服务端配置的策略指导客户端浏览器，放松同源策略限制，实现跨域资源共享。但是一旦服务器端访问控制策略配置出现错误，信任非预期域名，就会出现浏览器SOP被绕过。下面是搜狐视频演示，攻击者可以利用CORS误配置漏洞， 从恶意网站跨域读写搜狐视频用户账号敏感信息。
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/PWbPbtyyNi8&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;center&gt;搜狐视频 CORS 误配置漏洞演示(已修复)&lt;/center&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;2-1-反射-origin头&#34;&gt;2.1 反射 Origin头&lt;/h3&gt;
+
+&lt;p&gt;根据前面的 CORS基本用法，开发者可以很容易实现与其它单个网站共享数据。假如一个开发者想要与多个网站共享数据，应该如何配置CORS呢？也许直觉告诉你应该如下配置：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-http&#34;&gt;Access-Control-Allow-Origin: http://a.com, http://c.com
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;但事实上这种域名列表配置是错误的，因为CORS标准规定，Access-Control-Allow-Origin只能配置为单个origin, null或*。如果开发者想要实现同时与多个域名共享域名的需求，则需要专门编写代码或者使用框架来协助动态生成访问控制策略。这种动态生成的做法增加了开发者配置难度，导致实际网络中出现各种不安全的误配置。&lt;/p&gt;
+
+&lt;p&gt;最简单地动态生成访问控制策略的方法，就是在Access-Control-Allow-Origin中反射请求的Origin值。例如，下面是一个错误 Nginx 配置示例：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-nginx&#34;&gt;add_header &amp;quot;Access-Control-Allow-Origin&amp;quot; $http_origin;
+add_header “Access-Control-Allow-Credentials” “true”;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这种配置非常危险，相当于信任任意网站，给攻击者网站敞开了大门。任意攻击者网站可以直接跨域读取其资源内容。&lt;/p&gt;
+
+&lt;h3 id=&#34;2-2-origin-校验错误&#34;&gt;2.2 Origin 校验错误&lt;/h3&gt;
+
+&lt;p&gt;由于前面那种反射 Origin 的做法过于宽松，另一些开发人员试图在生成访问控制策略时校验Origin头，我们发现这个校验过程实际中也出现许多错误。这些错误可以分为四类：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;前缀匹配&lt;/strong&gt;: 资源服务器在检查请求中Origin值时，只匹配了前缀。例如www.example.com 想要允许example.com访问，但是只做了前缀匹配，导致同时信任了example.com.attack.com的访问，而example.com.attack.com 是攻击者可以控制的网站。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;后缀匹配&lt;/strong&gt;：资源服务器在检查请求中Origin值时，只做了后缀匹配。例如www.example.com 想要允许example.com访问，由于后缀匹配出错，导致允许attackexample.com访问。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;没有转义’.’&lt;/strong&gt;：例如，example.com想要允许www.example.com 访问时，但正则匹配没有转义’.’，导致允许wwwaexample.com访问。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;包含匹配&lt;/strong&gt;: 我们还发现有的网站www.example.com 想要允许 example.com，但是Origin校验出错，出现允许ample.com访问。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;2-3-信任null&#34;&gt;2.3 信任null&lt;/h3&gt;
+
+&lt;p&gt;CORS协议的一个重要安全前提是跨域请求中的Origin头不能被伪造，这个前提并不是总是成立。Origin头最早被提出用于防御CSRF攻击，它的语法格式在RFC 6564中被定义。RFC 6564规定，如果请求来自隐私敏感上下文时，Origin头的值应该为null，但是它却没有明确界定什么是隐私敏感上下文。&lt;/p&gt;
+
+&lt;p&gt;CORS协议复用了Origin头，但在CORS标准中同样缺乏对跨域请求Origin中null明确的定义和限制。有些开发者在网站上配置信任 null，用于与本地file页面共享数据，如下所示：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-http&#34;&gt;Access-Control-Allow-Origin: null
+Access-Control-Allow-Credentials: true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;但是事实上，除了本地file页面的跨域请求Origin头为null外，攻击者还可以从任意域下通过iframe sandbox构造Origin为null的跨域请求，如下是一段示意代码：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;iframe sandbox=&amp;quot;allow-scripts allow-top-navigation allow-forms&amp;quot; src=&#39;data:text/html,&amp;lt;script&amp;gt;XMLHttpRequest here&amp;lt;/script&amp;gt;’&amp;gt;&amp;lt;/iframe&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这就意味着任何配置有&lt;code&gt;Access-Control-Allow-Origin: null&lt;/code&gt;和&lt;code&gt;Access-Control-Allow-Credentials:true&lt;/code&gt;的网站等同于没有浏览器SOP的保护，都可以被其他任意域以这种方式读取内容。&lt;/p&gt;
+
+&lt;h3 id=&#34;2-4-https域信任http域&#34;&gt;2.4 HTTPS域信任HTTP域&lt;/h3&gt;
+
+&lt;p&gt;HTTPS协议被设计用于在不安全的中间网络中进行安全通信。即使在中间人网络环境下，攻击者也应该无法读取HTTPS网站的内容。但是如果该HTTPS网站配置了CORS且信任HTTP域，那么中间人攻击者可以先劫持受信任HTTP域，然后通过这个域发送跨域请求到HTTPS网站，间接读取HTTPS域下的受保护内容。具体流程如图3所示，中间人攻击者可以可以利用 &lt;code&gt;http://example.com&lt;/code&gt; 网站为跳板，窃取 HTTPS 网站的内容。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/blog/2018/CORS-https-MITM.png&#34; width=&#34;80%&#34; title=&#34;图3 利用 CORS 误配置实现中间人读取 HTTPS网站内容&#34; style=&#34;margin-bottom:0px&#34;&gt;
+&lt;center&gt;图3 利用 CORS 误配置实现中间人读取 HTTPS网站内容&lt;/center&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;2-5-信任自身任意子域&#34;&gt;2.5 信任自身任意子域&lt;/h3&gt;
+
+&lt;p&gt;很多网站为了方便会将 CORS 配置为信任自身任意子域，这种配置会导致子域 XSS的危害被强化。为了防止某个子域上XSS漏洞的危害其他子域，浏览器设计了Cookie的httponly标志，用于限制Javascript读取Cookie，因此某个子域XSS不能读取带有httponly标记的Cookie，难以窃取其他重要子域上的敏感内容。 但是如果这个域配置了CORS且信任任意子域，那么攻击者可以利用其他任意子域上XSS漏洞，发送跨域请求到目标重要域网站，从而获取敏感内容。&lt;/p&gt;
+
+&lt;h3 id=&#34;2-6-origin-与-credentials-true-共用&#34;&gt;2.6 Origin:*与 Credentials:true 共用&lt;/h3&gt;
+
+&lt;p&gt;为了Web开发者配置方便，W3C的CORS提供了&lt;code&gt;Access-Control-Allow-Origin:*&lt;/code&gt;，用于表示允许任意域访问。考虑到这种权限过于宽松，CORS又规定，&lt;code&gt;Access-Control-Allow-Origin:*&lt;/code&gt;与 &lt;code&gt;Access-Control-Allow-Credentials:true&lt;/code&gt; 不能同时使用。浏览器会对下面这种误配置报错：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-http&#34;&gt;Access-Control-Allow-Origin: * 
+Access-Control-Allow-Credentials: true 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这就意味着，&lt;code&gt;Access-Control-Allow-Origin:*&lt;/code&gt;只能用于共享公开资源。&lt;/p&gt;
+
+&lt;p&gt;在后面的测量实验中，研究人员发现许多Web 开发者和框架开发者并没有意识到这个额外的限制。1)很多网站仍然同时配置了这种组合。 2）有些Web框架为了避免上述配置带来得浏览器报错，而主动将Origin:*和Credentials:true转换成反射Origin。这使得CORS协议的安全机制被绕过，导致产生安全问题。 我们分析了11个主流的CORS中间件，发现8个中间件将Origin:*和Credentials:true转换成反射Origin，允许任意域读取认证资源，如表1所示。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/blog/2018/CORS-frameworks.png&#34; width=&#34;60%&#34; title=&#34;表1  CORS框架不安全配置统计&#34; style=&#34;margin-bottom:0px&#34;&gt;
+&lt;center&gt;表1  CORS框架不安全配置统计&lt;/center&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;2-7-缺少-vary-origin头&#34;&gt;2.7 缺少 Vary:Origin头&lt;/h3&gt;
+
+&lt;p&gt;当资源服务器需要共享多个域名时，它需要每个不同请求域的跨域请求生成不同的访问控制策略。但一旦这个资源内容需要被缓存，则会带来 CORS 失效问题。例如，c.com同时允许a.com和b.com共享。c.com 资源内容首先被a.com 脚本跨域访问后被缓存，其中缓存响应头为&lt;code&gt;Access-Control-Allow-Origin: http://a.com&lt;/code&gt;”。这时，b.com脚本则不能读取缓存响应内容，因为缓存响应头是允许a.com共享，而不是b.com。&lt;/p&gt;
+
+&lt;p&gt;HTTP协议提供了Vary头，用于解决这种情况，资源服务器需要在响应头中配置Vary:Origin头来指导缓存，为每个不同的Origin头缓存一份不同的内容。我们分析11个不同的CORS中间件，其中有4个没有配置Vary头。&lt;/p&gt;
+
+&lt;h2 id=&#34;三-cors-部署现状评估&#34;&gt;三、CORS 部署现状评估&lt;/h2&gt;
+
+&lt;p&gt;为了研究CORS不安全配置在实际互联网中的部署状况，我们对Alexa Top 50,000网站的CORS部署做了一次测量。为了全面测量这些网站所有子域的CORS配置安全性，我们从360网络安全研究院的Passive DNS(DNSpai)日志中提取了这些网站所有的子域名，一共包含97,199,966个不同子域名，覆盖49,729个不同的二级域名。&lt;/p&gt;
+
+&lt;p&gt;由于在大多数网站在配置CORS时，总是动态生成访问控制策略。只有当请求中的Origin头的值在它信任的列表中，网站才会返回Access-Control-Allow-Origin头。因此我们在测量时需要多次变化Origin头的值，主动探测它的访问控制策略。例如，为了测试一个HTTPS网站(&lt;code&gt;https://example.com&lt;/code&gt;)是否存在 HTTPS域信任 HTTP域的问题，我们将请求Origin头设置为&lt;code&gt;Origin: http://example.com&lt;/code&gt;，然后根据返回响应中是否存在&lt;code&gt;Access-Control-Allow-Origin: http://example.com&lt;/code&gt;，来推断这个域名是否存在HTTPS域信任HTTP域的问题。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/blog/2018/CORS-measurement-results.png&#34; width=&#34;60%&#34; title=&#34;表2 Alexa Top 50,000网站CORS不安全配置统计&#34; style=&#34;margin-bottom:0px&#34;&gt;
+&lt;center&gt;表2 Alexa Top 50,000网站CORS不安全配置统计&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;通过分析测量结果，我们发现481,589个子网站配置了 CORS，其中132,476个子网站(约27.5%)存在不安全CORS配置，其中包括sohu.com、fedex.com、nasdaq.com等国内外知名网站。这些安全问题能够造成用户隐私泄露，信息窃取甚至账户劫持。&lt;/p&gt;
+
+&lt;h2 id=&#34;四-讨论与防御&#34;&gt;四、讨论与防御&lt;/h2&gt;
+
+&lt;h3 id=&#34;4-1-标准组织与厂商响应&#34;&gt;4.1 标准组织与厂商响应&lt;/h3&gt;
+
+&lt;p&gt;尽管这些误配置的主要成因是Web开发者的不小心，但是我们认为还有一部分成因还跟CORS 协议的不合理设计有关。例如CORS协议不支持配置列表策略，导致开发者必须动态生成访问控制策略，而出现各种权限泄露。另外，CORS 标准没有清晰地将这些安全风险传达到开发者，也是
+一个重要成因，例如我们发现很多开发者不知道网站配置信任null带来的安全隐患。&lt;/p&gt;
+
+&lt;p&gt;我们与国际Web标准组织WHATWG讨论了这些问题。他们认为这些问题最好由 Web 开发者修改配置来解决，而不是调整协议设计，因为标准变动可能带来新的不兼容。但是他们赞同我们关于 CORS标准增加安全风险小节的建议，并希望我们能帮助他们总结已有CORS安全风险。目前我们正在积极整理相关内容。&lt;/p&gt;
+
+&lt;p&gt;我们把发现的漏洞报告给了CORS框架厂商。Tomcat, Yii 和 Go-CORS 框架已经修改了他们的实现，不将*转换为反射 Origin 头。 Tomcat安全团队还为我们的报告申请了CVE 编号 (CVE-2018-8014) 。ASP.net 的安全人员告诉我们，他们将在3.0版本中做同样变动。&lt;/p&gt;
+
+&lt;p&gt;我们也正在将漏洞报告给相关网站。一些网站(如, nasdaq.com, sohu.com, mail.ru)已经修复。 nasdaq.com 还提供了 $100 美元的奖励。&lt;/p&gt;
+
+&lt;h3 id=&#34;4-2-cors-部署最佳实践&#34;&gt;4.2 CORS 部署最佳实践&lt;/h3&gt;
+
+&lt;p&gt;根据前面的分析，我们总结7条 CORS安全配置最佳实践：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;不要盲目反射 Origin头&lt;/li&gt;
+&lt;li&gt;严格校验 Origin 头，避免出现权限泄露&lt;/li&gt;
+&lt;li&gt;不要配置 Access-Control-Allow-Origin: null&lt;/li&gt;
+&lt;li&gt;HTTPS 网站不要信任HTTP 域&lt;/li&gt;
+&lt;li&gt;不要信任全部自身子域，减少攻击面&lt;/li&gt;
+&lt;li&gt;不要配置 Origin:*和 Credentials: true&lt;/li&gt;
+&lt;li&gt;增加 Vary: Origin 头&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;我们将CORS漏洞扫描工具 &lt;a href=&#34;https://github.com/chenjj/CORScanner&#34; target=&#34;_blank&#34;&gt;CORScanner&lt;/a&gt; 开源在 Github上，便于Web 开发者检测网站是否存在上述几种不安全配置。&lt;/p&gt;
+
+&lt;h2 id=&#34;五-总结&#34;&gt;五、总结&lt;/h2&gt;
+
+&lt;p&gt;我们对CORS部署安全进行了系统研究，总结了7大类容易出错的 CORS误配置安全问题。通过对CORS实际部署情况的大规模测量，我们发现开发者对CORS的安全性问题并未充分理解，27.5%的CORS网站存在不安全的配置问题，我们分析发现部分问题源于开发者的疏忽，部分也源于CORS协议自身设计与实现的不规范。最后我们针对这些问题提出了缓解建议，并对研究过程中发现的案例进行了负责任的披露。&lt;/p&gt;
+
+&lt;h2 id=&#34;六-参考文献&#34;&gt;六、参考文献&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CORS Secure Deployment Best Practice</title>
+      <link>/post/cors-secure-deployment-best-practice/</link>
+      <pubDate>Mon, 23 Jul 2018 13:40:04 +0800</pubDate>
+      
+      <guid>/post/cors-secure-deployment-best-practice/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>We Still Don’t Have Secure Cross-Domain Requests: an Empirical Study of CORS</title>
+      <link>/publication/an-empirical-study-of-cors/</link>
+      <pubDate>Sun, 22 Jul 2018 11:23:39 +0800</pubDate>
+      
+      <guid>/publication/an-empirical-study-of-cors/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Host of Troubles： Multiple Host Ambiguities in HTTP Implementations</title>
+      <link>/publication/host-of-troubles-multiple-host-ambiguities-in-http-implementations/</link>
+      <pubDate>Sat, 22 Oct 2016 11:18:39 +0800</pubDate>
+      
+      <guid>/publication/host-of-troubles-multiple-host-ambiguities-in-http-implementations/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Seeking Nonsense, Looking for Trouble: Efficient Promotional-Infection Detection through Semantic Inconsistency Search</title>
+      <link>/publication/seeking-nonsense-looking-for-trouble-efficient-promotional-infection-detection-through-semantic-inconsistency-search/</link>
+      <pubDate>Fri, 22 Jul 2016 11:32:44 +0800</pubDate>
+      
+      <guid>/publication/seeking-nonsense-looking-for-trouble-efficient-promotional-infection-detection-through-semantic-inconsistency-search/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Forwarding Loop Attacks in Content Delivery Networks</title>
+      <link>/publication/forwarding-loop-attacks-in-content-delivery-networks/</link>
+      <pubDate>Mon, 22 Feb 2016 11:03:35 +0800</pubDate>
+      
+      <guid>/publication/forwarding-loop-attacks-in-content-delivery-networks/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

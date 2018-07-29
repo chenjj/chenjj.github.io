@@ -1,0 +1,13 @@
+{
+    "icons": [{
+      "src": "img/icon-32.jpeg",
+      "sizes": "32x32",
+      "type": "image/jpeg"
+    },{
+        "src": "img/icon-192.jpeg",
+        "sizes": "192x192",
+        "type": "image/jpeg"
+    }],
+    "display": "standalone",
+    "start_url": "./?utm_source=web_app_manifest"
+}
