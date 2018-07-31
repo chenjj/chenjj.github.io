@@ -92,7 +92,7 @@
   
   <meta property="og:site_name" content="Jianjun Chen&#39;s Homepage">
   <meta property="og:url" content="/post/cors%E5%AE%89%E5%85%A8%E9%83%A8%E7%BD%B2%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/">
-  <meta property="og:title" content="Web跨域资源共享(CORS)配置安全漏洞报告及最佳部署实践 | Jianjun Chen&#39;s Homepage">
+  <meta property="og:title" content="绕过浏览器SOP，跨站窃取信息：CORS配置安全漏洞报告及最佳部署实践 | Jianjun Chen&#39;s Homepage">
   <meta property="og:description" content="简介 CORS（Cross-Origin Resource Sharing, 跨域资源共享）是HTML5的一个新特性，用于解决浏览器跨域网络资源访问，目前已经被所有浏览器支持，">
   <meta property="og:locale" content="en-us">
   
@@ -105,7 +105,7 @@
 
   
 
-  <title>Web跨域资源共享(CORS)配置安全漏洞报告及最佳部署实践 | Jianjun Chen&#39;s Homepage - 陈建军的主页</title>
+  <title>绕过浏览器SOP，跨站窃取信息：CORS配置安全漏洞报告及最佳部署实践 | Jianjun Chen&#39;s Homepage - 陈建军的主页</title>
 
 <script>
 var _hmt = _hmt || [];
@@ -274,7 +274,7 @@ var _hmt = _hmt || [];
 
 
   <div class="article-container">
-    <h1 itemprop="name">Web跨域资源共享(CORS)配置安全漏洞报告及最佳部署实践</h1>
+    <h1 itemprop="name">绕过浏览器SOP，跨站窃取信息：CORS配置安全漏洞报告及最佳部署实践</h1>
 
     
 
@@ -323,7 +323,7 @@ var _hmt = _hmt || [];
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=Web%e8%b7%a8%e5%9f%9f%e8%b5%84%e6%ba%90%e5%85%b1%e4%ba%ab%28CORS%29%e9%85%8d%e7%bd%ae%e5%ae%89%e5%85%a8%e6%bc%8f%e6%b4%9e%e6%8a%a5%e5%91%8a%e5%8f%8a%e6%9c%80%e4%bd%b3%e9%83%a8%e7%bd%b2%e5%ae%9e%e8%b7%b5&amp;url=%2fpost%2fcors%25E5%25AE%2589%25E5%2585%25A8%25E9%2583%25A8%25E7%25BD%25B2%25E6%259C%2580%25E4%25BD%25B3%25E5%25AE%259E%25E8%25B7%25B5%2f"
+         href="https://twitter.com/intent/tweet?text=%e7%bb%95%e8%bf%87%e6%b5%8f%e8%a7%88%e5%99%a8SOP%ef%bc%8c%e8%b7%a8%e7%ab%99%e7%aa%83%e5%8f%96%e4%bf%a1%e6%81%af%ef%bc%9aCORS%e9%85%8d%e7%bd%ae%e5%ae%89%e5%85%a8%e6%bc%8f%e6%b4%9e%e6%8a%a5%e5%91%8a%e5%8f%8a%e6%9c%80%e4%bd%b3%e9%83%a8%e7%bd%b2%e5%ae%9e%e8%b7%b5&amp;url=%2fpost%2fcors%25E5%25AE%2589%25E5%2585%25A8%25E9%2583%25A8%25E7%25BD%25B2%25E6%259C%2580%25E4%25BD%25B3%25E5%25AE%259E%25E8%25B7%25B5%2f"
          target="_blank" rel="noopener">
         <i class="fa fa-twitter"></i>
       </a>
@@ -337,21 +337,21 @@ var _hmt = _hmt || [];
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2fcors%25E5%25AE%2589%25E5%2585%25A8%25E9%2583%25A8%25E7%25BD%25B2%25E6%259C%2580%25E4%25BD%25B3%25E5%25AE%259E%25E8%25B7%25B5%2f&amp;title=Web%e8%b7%a8%e5%9f%9f%e8%b5%84%e6%ba%90%e5%85%b1%e4%ba%ab%28CORS%29%e9%85%8d%e7%bd%ae%e5%ae%89%e5%85%a8%e6%bc%8f%e6%b4%9e%e6%8a%a5%e5%91%8a%e5%8f%8a%e6%9c%80%e4%bd%b3%e9%83%a8%e7%bd%b2%e5%ae%9e%e8%b7%b5"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2fcors%25E5%25AE%2589%25E5%2585%25A8%25E9%2583%25A8%25E7%25BD%25B2%25E6%259C%2580%25E4%25BD%25B3%25E5%25AE%259E%25E8%25B7%25B5%2f&amp;title=%e7%bb%95%e8%bf%87%e6%b5%8f%e8%a7%88%e5%99%a8SOP%ef%bc%8c%e8%b7%a8%e7%ab%99%e7%aa%83%e5%8f%96%e4%bf%a1%e6%81%af%ef%bc%9aCORS%e9%85%8d%e7%bd%ae%e5%ae%89%e5%85%a8%e6%bc%8f%e6%b4%9e%e6%8a%a5%e5%91%8a%e5%8f%8a%e6%9c%80%e4%bd%b3%e9%83%a8%e7%bd%b2%e5%ae%9e%e8%b7%b5"
          target="_blank" rel="noopener">
         <i class="fa fa-linkedin"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=%2fpost%2fcors%25E5%25AE%2589%25E5%2585%25A8%25E9%2583%25A8%25E7%25BD%25B2%25E6%259C%2580%25E4%25BD%25B3%25E5%25AE%259E%25E8%25B7%25B5%2f&amp;title=Web%e8%b7%a8%e5%9f%9f%e8%b5%84%e6%ba%90%e5%85%b1%e4%ba%ab%28CORS%29%e9%85%8d%e7%bd%ae%e5%ae%89%e5%85%a8%e6%bc%8f%e6%b4%9e%e6%8a%a5%e5%91%8a%e5%8f%8a%e6%9c%80%e4%bd%b3%e9%83%a8%e7%bd%b2%e5%ae%9e%e8%b7%b5"
+         href="http://service.weibo.com/share/share.php?url=%2fpost%2fcors%25E5%25AE%2589%25E5%2585%25A8%25E9%2583%25A8%25E7%25BD%25B2%25E6%259C%2580%25E4%25BD%25B3%25E5%25AE%259E%25E8%25B7%25B5%2f&amp;title=%e7%bb%95%e8%bf%87%e6%b5%8f%e8%a7%88%e5%99%a8SOP%ef%bc%8c%e8%b7%a8%e7%ab%99%e7%aa%83%e5%8f%96%e4%bf%a1%e6%81%af%ef%bc%9aCORS%e9%85%8d%e7%bd%ae%e5%ae%89%e5%85%a8%e6%bc%8f%e6%b4%9e%e6%8a%a5%e5%91%8a%e5%8f%8a%e6%9c%80%e4%bd%b3%e9%83%a8%e7%bd%b2%e5%ae%9e%e8%b7%b5"
          target="_blank" rel="noopener">
         <i class="fa fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=Web%e8%b7%a8%e5%9f%9f%e8%b5%84%e6%ba%90%e5%85%b1%e4%ba%ab%28CORS%29%e9%85%8d%e7%bd%ae%e5%ae%89%e5%85%a8%e6%bc%8f%e6%b4%9e%e6%8a%a5%e5%91%8a%e5%8f%8a%e6%9c%80%e4%bd%b3%e9%83%a8%e7%bd%b2%e5%ae%9e%e8%b7%b5&amp;body=%2fpost%2fcors%25E5%25AE%2589%25E5%2585%25A8%25E9%2583%25A8%25E7%25BD%25B2%25E6%259C%2580%25E4%25BD%25B3%25E5%25AE%259E%25E8%25B7%25B5%2f">
+         href="mailto:?subject=%e7%bb%95%e8%bf%87%e6%b5%8f%e8%a7%88%e5%99%a8SOP%ef%bc%8c%e8%b7%a8%e7%ab%99%e7%aa%83%e5%8f%96%e4%bf%a1%e6%81%af%ef%bc%9aCORS%e9%85%8d%e7%bd%ae%e5%ae%89%e5%85%a8%e6%bc%8f%e6%b4%9e%e6%8a%a5%e5%91%8a%e5%8f%8a%e6%9c%80%e4%bd%b3%e9%83%a8%e7%bd%b2%e5%ae%9e%e8%b7%b5&amp;body=%2fpost%2fcors%25E5%25AE%2589%25E5%2585%25A8%25E9%2583%25A8%25E7%25BD%25B2%25E6%259C%2580%25E4%25BD%25B3%25E5%25AE%259E%25E8%25B7%25B5%2f">
         <i class="fa fa-envelope"></i>
       </a>
     </li>
