@@ -20,7 +20,7 @@
     </item>
     
     <item>
-      <title>CORS安全部署最佳实践</title>
+      <title>Web跨域资源共享(CORS)配置安全漏洞报告及最佳部署实践</title>
       <link>/post/cors%E5%AE%89%E5%85%A8%E9%83%A8%E7%BD%B2%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
       <pubDate>Tue, 24 Jul 2018 12:56:52 +0800</pubDate>
       
@@ -30,9 +30,9 @@
 &lt;p&gt;&lt;h2&gt;简介&lt;/h2&gt;
 CORS（Cross-Origin Resource Sharing, 跨域资源共享）是HTML5的一个新特性，用于解决浏览器跨域网络资源访问，目前已经被所有浏览器支持，并被主流网站广泛部署使用。&lt;/p&gt;
 
-&lt;p&gt;我们对CORS部署安全进行了系统研究，总结了7大类容易出错的 CORS 误配置问题，并对现实网络中CORS部署安全现状进行了评估。我们对Alex 排名前5万的域名以及超过9千多万个子域名进行了大规模测量，发现有&lt;strong&gt;27.5%的部署CORS 的网站存在误配置安全问题&lt;/strong&gt;，其中包括sohu.com、fedex.com、nasdaq.com等国内外知名网站。这些安全问题能够造成用户隐私泄露，信息窃取甚至账户劫持。 我们还测试分析了11款主流的 CORS 框架，发现其中10款框架都存在至少一类不安全配置。&lt;/p&gt;
+&lt;p&gt;我们(“清华-360企业安全联合研究中心”团队)对CORS部署安全进行了系统研究，总结了7大类容易出错的 CORS 误配置问题，并对现实网络中CORS部署安全现状进行了评估。我们对Alex 排名前5万的域名以及超过9千多万个子域名进行了大规模测量，发现有&lt;strong&gt;27.5%的部署CORS 的网站存在误配置安全问题&lt;/strong&gt;，其中包括sohu.com、fedex.com、nasdaq.com等国内外知名网站。这些安全问题能够造成用户隐私泄露，信息窃取甚至账户劫持。 我们还测试分析了11款主流的 CORS 框架，发现其中10款框架都存在至少一类不安全配置。这项工作作为部分研究成果发表在国际顶级安全会议 &lt;a href=&#34;/publication/an-empirical-study-of-cors/&#34;&gt;USENIX Security 2018&lt;/a&gt;上[1]。&lt;/p&gt;
 
-&lt;p&gt;本文总结 CORS 部署安全最佳实践，并提供一款开源自动化 CORS 误配置漏洞检测工具，为Web 开发人员和渗透测试人员避免和发现 CORS 不安全配置提供参考。&lt;/p&gt;
+&lt;p&gt;本文总结 CORS 部署安全最佳实践，并提供一款开源自动化 CORS 误配置漏洞检测工具[2]，为Web 开发人员和渗透测试人员避免和发现 CORS 不安全配置提供参考。&lt;/p&gt;
 
 &lt;h2&gt;Table of Contents&lt;/h2&gt;
 &lt;nav id=&#34;TableOfContents&#34;&gt;
@@ -51,7 +51,7 @@ CORS（Cross-Origin Resource Sharing, 跨域资源共享）是HTML5的一个新�
 &lt;li&gt;&lt;a href=&#34;#2-2-origin-校验错误&#34;&gt;2.2 Origin 校验错误&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#2-3-信任null&#34;&gt;2.3 信任null&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#2-4-https域信任http域&#34;&gt;2.4 HTTPS域信任HTTP域&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#2-5-信任自身任意子域&#34;&gt;2.5 信任自身任意子域&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#2-5-信任自身全部子域&#34;&gt;2.5 信任自身全部子域&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#2-6-origin-与-credentials-true-共用&#34;&gt;2.6 Origin:*与 Credentials:true 共用&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#2-7-缺少-vary-origin头&#34;&gt;2.7 缺少 Vary:Origin头&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
@@ -136,7 +136,12 @@ xhr.send();
 &lt;pre&gt;&lt;code class=&#34;language-http&#34;&gt;Access-Control-Allow-Origin: http://a.com, http://c.com
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;但事实上这种域名列表配置是错误的，因为CORS标准规定，Access-Control-Allow-Origin只能配置为单个origin, null或*。如果开发者想要实现同时与多个域名共享域名的需求，则需要专门编写代码或者使用框架来协助动态生成访问控制策略。这种动态生成的做法增加了开发者配置难度，导致实际网络中出现各种不安全的误配置。&lt;/p&gt;
+&lt;p&gt;或者&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-http&#34;&gt;Access-Control-Allow-Origin: http://*.a.com
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;但事实上这两种域名配置是错误的，因为CORS标准规定，Access-Control-Allow-Origin只能配置为单个origin, null或*。如果开发者想要实现同时与多个域名共享域名的需求，则需要专门编写代码或者使用框架来协助动态生成访问控制策略。这种动态生成的做法增加了开发者配置难度，导致实际网络中出现各种不安全的误配置。&lt;/p&gt;
 
 &lt;p&gt;最简单地动态生成访问控制策略的方法，就是在Access-Control-Allow-Origin中反射请求的Origin值。例如，下面是一个错误 Nginx 配置示例：&lt;/p&gt;
 
@@ -184,9 +189,9 @@ Access-Control-Allow-Credentials: true
 &lt;p&gt;&lt;img src=&#34;/img/blog/2018/CORS-https-MITM.png&#34; width=&#34;80%&#34; title=&#34;图3 利用 CORS 误配置实现中间人读取 HTTPS网站内容&#34; style=&#34;margin-bottom:0px&#34;&gt;
 &lt;center&gt;图3 利用 CORS 误配置实现中间人读取 HTTPS网站内容&lt;/center&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;2-5-信任自身任意子域&#34;&gt;2.5 信任自身任意子域&lt;/h3&gt;
+&lt;h3 id=&#34;2-5-信任自身全部子域&#34;&gt;2.5 信任自身全部子域&lt;/h3&gt;
 
-&lt;p&gt;很多网站为了方便会将 CORS 配置为信任自身任意子域，这种配置会导致子域 XSS的危害被强化。为了防止某个子域上XSS漏洞的危害其他子域，浏览器设计了Cookie的httponly标志，用于限制Javascript读取Cookie，因此某个子域XSS不能读取带有httponly标记的Cookie，难以窃取其他重要子域上的敏感内容。 但是如果这个域配置了CORS且信任任意子域，那么攻击者可以利用其他任意子域上XSS漏洞，发送跨域请求到目标重要域网站，从而获取敏感内容。&lt;/p&gt;
+&lt;p&gt;很多网站为了方便会将 CORS 配置为信任全部自身子域，这种配置会导致子域 XSS的危害被强化。为了防止某个子域上XSS漏洞的危害其他子域，浏览器设计了Cookie的httponly标志，用于限制Javascript读取Cookie，因此某个子域XSS不能读取带有httponly标记的Cookie，难以窃取其他重要子域上的敏感内容。 但是如果这个域配置了CORS且信任全部子域，那么攻击者可以利用其他任意子域上XSS漏洞，发送跨域请求到目标重要域网站，从而获取敏感内容。&lt;/p&gt;
 
 &lt;h3 id=&#34;2-6-origin-与-credentials-true-共用&#34;&gt;2.6 Origin:*与 Credentials:true 共用&lt;/h3&gt;
 
@@ -198,7 +203,7 @@ Access-Control-Allow-Credentials: true
 
 &lt;p&gt;这就意味着，&lt;code&gt;Access-Control-Allow-Origin:*&lt;/code&gt;只能用于共享公开资源。&lt;/p&gt;
 
-&lt;p&gt;在后面的测量实验中，研究人员发现许多Web 开发者和框架开发者并没有意识到这个额外的限制。1)很多网站仍然同时配置了这种组合。 2）有些Web框架为了避免上述配置带来得浏览器报错，而主动将Origin:*和Credentials:true转换成反射Origin。这使得CORS协议的安全机制被绕过，导致产生安全问题。 我们分析了11个主流的CORS中间件，发现8个中间件将Origin:*和Credentials:true转换成反射Origin，允许任意域读取认证资源，如表1所示。&lt;/p&gt;
+&lt;p&gt;在后面的测量实验中，我们发现许多Web 开发者和框架开发者并没有意识到这个额外的限制。1)很多网站仍然同时配置了这种组合。 2）有些Web框架为了避免上述配置带来得浏览器报错，而主动将Origin:*和Credentials:true转换成反射Origin。这使得CORS协议的安全机制被绕过，导致产生安全问题。 我们分析了11个主流的CORS中间件，发现8个中间件将Origin:*和Credentials:true转换成反射Origin，允许任意域读取认证资源，如表1所示。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;/img/blog/2018/CORS-frameworks.png&#34; width=&#34;60%&#34; title=&#34;表1  CORS框架不安全配置统计&#34; style=&#34;margin-bottom:0px&#34;&gt;
 &lt;center&gt;表1  CORS框架不安全配置统计&lt;/center&gt;&lt;/p&gt;
@@ -229,7 +234,7 @@ Access-Control-Allow-Credentials: true
 
 &lt;p&gt;我们与国际Web标准组织WHATWG讨论了这些问题。他们认为这些问题最好由 Web 开发者修改配置来解决，而不是调整协议设计，因为标准变动可能带来新的不兼容。但是他们赞同我们关于 CORS标准增加安全风险小节的建议，并希望我们能帮助他们总结已有CORS安全风险。目前我们正在积极整理相关内容。&lt;/p&gt;
 
-&lt;p&gt;我们把发现的漏洞报告给了CORS框架厂商。Tomcat, Yii 和 Go-CORS 框架已经修改了他们的实现，不将*转换为反射 Origin 头。 Tomcat安全团队还为我们的报告申请了CVE 编号 (CVE-2018-8014) 。ASP.net 的安全人员告诉我们，他们将在3.0版本中做同样变动。&lt;/p&gt;
+&lt;p&gt;我们把发现的漏洞报告给了CORS框架厂商。Tomcat, Yii 和 Go-CORS 框架[3,4,6]已经修改了他们的实现，不将*转换为反射 Origin 头。 Tomcat安全团队还为我们的报告申请了CVE 编号 (CVE-2018-8014)[6]。ASP.net 的安全人员告诉我们，他们将在3.0版本中做同样变动[5]。&lt;/p&gt;
 
 &lt;p&gt;我们也正在将漏洞报告给相关网站。一些网站(如, nasdaq.com, sohu.com, mail.ru)已经修复。 nasdaq.com 还提供了 $100 美元的奖励。&lt;/p&gt;
 
@@ -254,16 +259,16 @@ Access-Control-Allow-Credentials: true
 &lt;p&gt;我们对CORS部署安全进行了系统研究，总结了7大类容易出错的 CORS误配置安全问题。通过对CORS实际部署情况的大规模测量，我们发现开发者对CORS的安全性问题并未充分理解，27.5%的CORS网站存在不安全的配置问题，我们分析发现部分问题源于开发者的疏忽，部分也源于CORS协议自身设计与实现的不规范。最后我们针对这些问题提出了缓解建议，并对研究过程中发现的案例进行了负责任的披露。&lt;/p&gt;
 
 &lt;h2 id=&#34;六-参考文献&#34;&gt;六、参考文献&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;CHEN J., Jiang J., DUAN H.-X., WAN T., CHEN S., Vern P., YANG M. We still don’t have secure cross-domain requests: An empirical study of CORS, In USENIX Security Symposium, 2018&lt;/li&gt;
+&lt;li&gt;CORS漏洞扫描工具CORScanner, &lt;a href=&#34;https://github.com/chenjj/CORScanner&#34; target=&#34;_blank&#34;&gt;https://github.com/chenjj/CORScanner&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Yii2 CORS误配置漏洞报告，&lt;a href=&#34;https://github.com/yiisoft/yii2/issues/16193&#34; target=&#34;_blank&#34;&gt;https://github.com/yiisoft/yii2/issues/16193&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ASP.net 误配置漏洞报告，&lt;a href=&#34;https://github.com/aspnet/Home/issues/3106&#34; target=&#34;_blank&#34;&gt;https://github.com/aspnet/Home/issues/3106&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Go-CORS误配置漏洞报告，&lt;a href=&#34;https://github.com/rs/cors/issues/55&#34; target=&#34;_blank&#34;&gt;https://github.com/rs/cors/issues/55&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;CVE-2018-8014，&lt;a href=&#34;https://nvd.nist.gov/vuln/detail/CVE-2018-8014&#34; target=&#34;_blank&#34;&gt;https://nvd.nist.gov/vuln/detail/CVE-2018-8014&lt;/a&gt;, 2018&lt;/li&gt;
+&lt;/ol&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>CORS Secure Deployment Best Practice</title>
-      <link>/post/cors-secure-deployment-best-practice/</link>
-      <pubDate>Mon, 23 Jul 2018 13:40:04 +0800</pubDate>
-      
-      <guid>/post/cors-secure-deployment-best-practice/</guid>
-      <description></description>
     </item>
     
     <item>
