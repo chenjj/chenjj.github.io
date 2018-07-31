@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jianjun Chen&#39;s Homepage on Jianjun Chen&#39;s Homepage</title>
-    <link>/</link>
+    <link>https://www.jianjunchen.com/</link>
     <description>Recent content in Jianjun Chen&#39;s Homepage on Jianjun Chen&#39;s Homepage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -11,26 +11,17 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>CORS安全部署最佳实践</title>
-      <link>/zh/post/cors%E5%AE%89%E5%85%A8%E9%83%A8%E7%BD%B2%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
-      <pubDate>Tue, 24 Jul 2018 22:36:45 +0800</pubDate>
-      
-      <guid>/zh/post/cors%E5%AE%89%E5%85%A8%E9%83%A8%E7%BD%B2%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>绕过浏览器SOP，跨站窃取信息：CORS配置安全漏洞报告及最佳部署实践</title>
-      <link>/post/cors%E5%AE%89%E5%85%A8%E9%83%A8%E7%BD%B2%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+      <link>https://www.jianjunchen.com/post/cors%E5%AE%89%E5%85%A8%E9%83%A8%E7%BD%B2%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
       <pubDate>Tue, 24 Jul 2018 12:56:52 +0800</pubDate>
       
-      <guid>/post/cors%E5%AE%89%E5%85%A8%E9%83%A8%E7%BD%B2%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+      <guid>https://www.jianjunchen.com/post/cors%E5%AE%89%E5%85%A8%E9%83%A8%E7%BD%B2%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
       <description>
 
 &lt;p&gt;&lt;h2&gt;简介&lt;/h2&gt;
 CORS（Cross-Origin Resource Sharing, 跨域资源共享）是HTML5的一个新特性，用于解决浏览器跨域网络资源访问，目前已经被所有浏览器支持，并被主流网站广泛部署使用。&lt;/p&gt;
 
-&lt;p&gt;我们(“清华-360企业安全联合研究中心”团队)对CORS部署安全进行了系统研究，总结了7大类容易出错的 CORS 误配置问题，并对现实网络中CORS部署安全现状进行了评估。我们对Alex 排名前5万的域名以及超过9千多万个子域名进行了大规模测量，发现有&lt;strong&gt;27.5%的部署CORS 的网站存在误配置安全问题&lt;/strong&gt;，其中包括sohu.com、fedex.com、nasdaq.com等国内外知名网站。这些安全问题能够造成用户隐私泄露，信息窃取甚至账户劫持。 我们还测试分析了11款主流的 CORS 框架，发现其中10款框架都存在至少一类不安全配置。这项工作作为部分研究成果发表在国际顶级安全会议 &lt;a href=&#34;/publication/an-empirical-study-of-cors/&#34;&gt;USENIX Security 2018&lt;/a&gt;上[1]。&lt;/p&gt;
+&lt;p&gt;我们(“清华-360企业安全联合研究中心”团队)对CORS部署安全进行了系统研究，总结了7大类容易出错的 CORS 误配置问题，并对现实网络中CORS部署安全现状进行了评估。我们对Alex 排名前5万的域名以及超过9千多万个子域名进行了大规模测量，发现有&lt;strong&gt;27.5%的部署CORS 的网站存在误配置安全问题&lt;/strong&gt;，其中包括sohu.com、fedex.com、nasdaq.com等国内外知名网站。这些安全问题能够造成用户隐私泄露，信息窃取甚至账户劫持。 我们还测试分析了11款主流的 CORS 框架，发现其中10款框架都存在至少一类不安全配置。这项工作作为部分研究成果发表在国际顶级安全会议 &lt;a href=&#34;https://www.jianjunchen.com/publication/an-empirical-study-of-cors/&#34;&gt;USENIX Security 2018&lt;/a&gt;上[1]。&lt;/p&gt;
 
 &lt;p&gt;本文总结 CORS 部署安全最佳实践，并提供一款开源自动化 CORS 误配置漏洞检测工具[2]，为Web 开发人员和渗透测试人员避免和发现 CORS 不安全配置提供参考。&lt;/p&gt;
 
@@ -74,7 +65,7 @@ CORS（Cross-Origin Resource Sharing, 跨域资源共享）是HTML5的一个新�
 
 &lt;p&gt;同源策略 (Same Origin Policy, SOP) 是 Web 最重要的安全机制，它保证了不同源(Origin，包括域名，端口和协议类型)的 Web 应用之间不能互相干扰。在SOP 的限制下，客户端脚本可以通过资源引用或者跨域表单提交向第三方服务器发送GET请求和POST请求，但是却不能读取响应内容。例如，在图1中，a.com网站脚本可以向 b.com 服务器发送 GET 请求，但是浏览器SOP会阻止其读取响应内容。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/img/blog/2018/SOP-network.png&#34; width=&#34;80%&#34; title=&#34;图1 同源策略默认阻止跨域读取响应内容&#34; style=&#34;margin-bottom:0px&#34;&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.jianjunchen.com/img/blog/2018/SOP-network.png&#34; width=&#34;80%&#34; title=&#34;图1 同源策略默认阻止跨域读取响应内容&#34; style=&#34;margin-bottom:0px&#34;&gt;
 &lt;center&gt;图1 同源策略默认阻止跨域读取响应内容&lt;/center&gt;&lt;/p&gt;
 
 &lt;p&gt;随着Web应用的发展，Web开发者需要读取跨域网络资源内容(例如，电商网站想通过用户浏览器加载第三方快递网站的物流信息)，开发人员提出了一些临时折衷方案来满足需求，例如JSONP，但是这些折衷方案带来了许多安全问题。&lt;/p&gt;
@@ -91,7 +82,7 @@ CORS（Cross-Origin Resource Sharing, 跨域资源共享）是HTML5的一个新�
 &lt;li&gt;浏览器检查资源服务器在Access-Control-Allow-Origin头中声明的源，是否与请求方的源相符，如果相符合，则允许请求方脚本读取响应内容，否则不允许。&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;img src=&#34;/img/blog/2018/CORS-flow.png&#34; width=&#34;80%&#34; title=&#34;图2 CORS 工作流程示意图&#34; style=&#34;margin-bottom:0px&#34;&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.jianjunchen.com/img/blog/2018/CORS-flow.png&#34; width=&#34;80%&#34; title=&#34;图2 CORS 工作流程示意图&#34; style=&#34;margin-bottom:0px&#34;&gt;
 &lt;center&gt;图2 CORS 工作流程示意图&lt;/center&gt;&lt;/p&gt;
 
 &lt;p&gt;在CORS协议中，请求方还可以指示浏览器在跨域请求中是否带credentials（包括Cookie，TLS客户端证书和代理验证信息）。如果跨域请求中带了credentials，那么浏览器会检查资源服务器返回的响应头中Access-Control-Allow-Credentials头是否设置为true，如果是，则允许请求方读取响应内容，否则，不允许。&lt;/p&gt;
@@ -186,7 +177,7 @@ Access-Control-Allow-Credentials: true
 
 &lt;p&gt;HTTPS协议被设计用于在不安全的中间网络中进行安全通信。即使在中间人网络环境下，攻击者也应该无法读取HTTPS网站的内容。但是如果该HTTPS网站配置了CORS且信任HTTP域，那么中间人攻击者可以先劫持受信任HTTP域，然后通过这个域发送跨域请求到HTTPS网站，间接读取HTTPS域下的受保护内容。具体流程如图3所示，中间人攻击者可以可以利用 &lt;code&gt;http://example.com&lt;/code&gt; 网站为跳板，窃取 HTTPS 网站的内容。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/img/blog/2018/CORS-https-MITM.png&#34; width=&#34;80%&#34; title=&#34;图3 利用 CORS 误配置实现中间人读取 HTTPS网站内容&#34; style=&#34;margin-bottom:0px&#34;&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.jianjunchen.com/img/blog/2018/CORS-https-MITM.png&#34; width=&#34;80%&#34; title=&#34;图3 利用 CORS 误配置实现中间人读取 HTTPS网站内容&#34; style=&#34;margin-bottom:0px&#34;&gt;
 &lt;center&gt;图3 利用 CORS 误配置实现中间人读取 HTTPS网站内容&lt;/center&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;2-5-信任自身全部子域&#34;&gt;2.5 信任自身全部子域&lt;/h3&gt;
@@ -205,7 +196,7 @@ Access-Control-Allow-Credentials: true
 
 &lt;p&gt;在后面的测量实验中，我们发现许多Web 开发者和框架开发者并没有意识到这个额外的限制。1)很多网站仍然同时配置了这种组合。 2）有些Web框架为了避免上述配置带来得浏览器报错，而主动将Origin:*和Credentials:true转换成反射Origin。这使得CORS协议的安全机制被绕过，导致产生安全问题。 我们分析了11个主流的CORS中间件，发现8个中间件将Origin:*和Credentials:true转换成反射Origin，允许任意域读取认证资源，如表1所示。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/img/blog/2018/CORS-frameworks.png&#34; width=&#34;60%&#34; title=&#34;表1  CORS框架不安全配置统计&#34; style=&#34;margin-bottom:0px&#34;&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.jianjunchen.com/img/blog/2018/CORS-frameworks.png&#34; width=&#34;60%&#34; title=&#34;表1  CORS框架不安全配置统计&#34; style=&#34;margin-bottom:0px&#34;&gt;
 &lt;center&gt;表1  CORS框架不安全配置统计&lt;/center&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;2-7-缺少-vary-origin头&#34;&gt;2.7 缺少 Vary:Origin头&lt;/h3&gt;
@@ -220,7 +211,7 @@ Access-Control-Allow-Credentials: true
 
 &lt;p&gt;由于在大多数网站在配置CORS时，总是动态生成访问控制策略。只有当请求中的Origin头的值在它信任的列表中，网站才会返回Access-Control-Allow-Origin头。因此我们在测量时需要多次变化Origin头的值，主动探测它的访问控制策略。例如，为了测试一个HTTPS网站(&lt;code&gt;https://example.com&lt;/code&gt;)是否存在 HTTPS域信任 HTTP域的问题，我们将请求Origin头设置为&lt;code&gt;Origin: http://example.com&lt;/code&gt;，然后根据返回响应中是否存在&lt;code&gt;Access-Control-Allow-Origin: http://example.com&lt;/code&gt;，来推断这个域名是否存在HTTPS域信任HTTP域的问题。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/img/blog/2018/CORS-measurement-results.png&#34; width=&#34;60%&#34; title=&#34;表2 Alexa Top 50,000网站CORS不安全配置统计&#34; style=&#34;margin-bottom:0px&#34;&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.jianjunchen.com/img/blog/2018/CORS-measurement-results.png&#34; width=&#34;60%&#34; title=&#34;表2 Alexa Top 50,000网站CORS不安全配置统计&#34; style=&#34;margin-bottom:0px&#34;&gt;
 &lt;center&gt;表2 Alexa Top 50,000网站CORS不安全配置统计&lt;/center&gt;&lt;/p&gt;
 
 &lt;p&gt;通过分析测量结果，我们发现481,589个子网站配置了 CORS，其中132,476个子网站(约27.5%)存在不安全CORS配置，其中包括sohu.com、fedex.com、nasdaq.com等国内外知名网站。这些安全问题能够造成用户隐私泄露，信息窃取甚至账户劫持。&lt;/p&gt;
@@ -273,37 +264,86 @@ Access-Control-Allow-Credentials: true
     
     <item>
       <title>We Still Don’t Have Secure Cross-Domain Requests: an Empirical Study of CORS</title>
-      <link>/publication/an-empirical-study-of-cors/</link>
+      <link>https://www.jianjunchen.com/publication/an-empirical-study-of-cors/</link>
       <pubDate>Sun, 22 Jul 2018 11:23:39 +0800</pubDate>
       
-      <guid>/publication/an-empirical-study-of-cors/</guid>
+      <guid>https://www.jianjunchen.com/publication/an-empirical-study-of-cors/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Host of Troubles： Multiple Host Ambiguities in HTTP Implementations</title>
-      <link>/publication/host-of-troubles-multiple-host-ambiguities-in-http-implementations/</link>
+      <link>https://www.jianjunchen.com/publication/host-of-troubles-multiple-host-ambiguities-in-http-implementations/</link>
       <pubDate>Sat, 22 Oct 2016 11:18:39 +0800</pubDate>
       
-      <guid>/publication/host-of-troubles-multiple-host-ambiguities-in-http-implementations/</guid>
+      <guid>https://www.jianjunchen.com/publication/host-of-troubles-multiple-host-ambiguities-in-http-implementations/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Seeking Nonsense, Looking for Trouble: Efficient Promotional-Infection Detection through Semantic Inconsistency Search</title>
-      <link>/publication/seeking-nonsense-looking-for-trouble-efficient-promotional-infection-detection-through-semantic-inconsistency-search/</link>
+      <link>https://www.jianjunchen.com/publication/seeking-nonsense-looking-for-trouble-efficient-promotional-infection-detection-through-semantic-inconsistency-search/</link>
       <pubDate>Fri, 22 Jul 2016 11:32:44 +0800</pubDate>
       
-      <guid>/publication/seeking-nonsense-looking-for-trouble-efficient-promotional-infection-detection-through-semantic-inconsistency-search/</guid>
+      <guid>https://www.jianjunchen.com/publication/seeking-nonsense-looking-for-trouble-efficient-promotional-infection-detection-through-semantic-inconsistency-search/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>A new type of DoS attack affecting all 16 CDNs we tested</title>
+      <link>https://www.jianjunchen.com/post/cdn-loop-attacks/</link>
+      <pubDate>Thu, 25 Feb 2016 23:16:10 +0800</pubDate>
+      
+      <guid>https://www.jianjunchen.com/post/cdn-loop-attacks/</guid>
+      <description>
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;Content Delivery Networks (CDNs) are important Internet infrastructure and improve the performance, scalability and security for websites. Therefore, attacks against availability of CDNs affect the reachability to a large amount of web sites.&lt;/p&gt;
+
+&lt;p&gt;In this study, we present how malicious customers could attack the availability of CDN by creating forwarding loops inside one CDN or across multiple CDNs. Such forwarding loops cause one request to be processed repeatedly or even indefinitely, resulting in undesired resource consumption and potentially Denial-of-Service attacks. We show that forwarding loop is a realistic and common threat against today’s commercial CDNs.  We examined 16 popular CDN providers, and found that all these CDNs are vulnerable to the forwarding loop attacks.  While some CDNs seem to be aware of this threat and have adopted specific forwarding loop detections, we discovered that all of them can be bypassed with new attacking techniques.  We also consider possible defenses. However, we found that, although conceptually simple, a comprehensive defense needs collaboration among all CDNs.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.jianjunchen.com/img/blog/2018/cdn-loop.png&#34; width=&#34;80%&#34; title=&#34;A concept view of CDN forwarding loop attacks&#34; style=&#34;margin-bottom:0px&#34;&gt;
+&lt;center&gt;A concept view of CDN forwarding loop attacks&lt;/center&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;vendor-responses&#34;&gt;Vendor Responses&lt;/h2&gt;
+
+&lt;p&gt;We reported these attacks to affected CDN vendors. Here are some of their responses:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;CloudFlare and Baidu:&lt;/strong&gt; implemented  the RFC 7230-compliant Via header in their CDN systems. Cloudflare also
+wrote a blog to introduce our paper and explained how they defend this attack[1].&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tencent:&lt;/strong&gt; evaluated the problem as a high-risk vulnerability. They stated that they view it as indeed a problem for the CDN industry. They thanked us for our report and provided some rewards.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CDN77 and CDNsun:&lt;/strong&gt; changed their system to not reset Via header.&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Fastly:&lt;/strong&gt; acknowledged and discussed our report with us. They also offered several T-shirts as a token of gratitude.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Akamai:&lt;/strong&gt; acknowledged our report and published an response to our paper[2].&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CERT/CC:&lt;/strong&gt; acknowledged our report and assigned a VU number(#938151) to track this problem[3].&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Verizon (EdgeCast):&lt;/strong&gt; contacted us to discuss the problem after learning of this issue from one of their clients, even though we did not include their service in our study. They stated that this problem is valid and can be a great danger to CDNs and the Internet in general.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;full-paper&#34;&gt;Full paper&lt;/h2&gt;
+
+&lt;p&gt;This work(&amp;rdquo;&lt;a href=&#34;https://www.jianjunchen.com/papers/cdn-loops.NDSS16.pdf&#34;&gt;Forwarding Loop Attacks in Content Delivery Networks&lt;/a&gt;&amp;rdquo;) was published on NDSS 2016, and won the distinguished paper award.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.jianjunchen.com/img/blog/2018/ndss16-award.jpg&#34; width=&#34;60%&#34; title=&#34;Distinguished Paper Award in NDSS 2016&#34; style=&#34;margin-bottom:0px&#34;&gt;
+&lt;center&gt;Distinguished Paper Award in NDSS 2016&lt;/center&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Preventing Malicious Request Loops, Nick Sullivan, &lt;a href=&#34;https://blog.cloudflare.com/preventing-malicious-request-loops&#34; target=&#34;_blank&#34;&gt;https://blog.cloudflare.com/preventing-malicious-request-loops&lt;/a&gt;, 2016&lt;/li&gt;
+&lt;li&gt;Akamai Response To &amp;ldquo;Forwarding-Loop&amp;rdquo; Issue, &lt;a href=&#34;https://blogs.akamai.com/2016/03/akamai-response-to-forwarding-loop-issue.html&#34; target=&#34;_blank&#34;&gt;https://blogs.akamai.com/2016/03/akamai-response-to-forwarding-loop-issue.html&lt;/a&gt;, 2016&lt;/li&gt;
+&lt;li&gt;Vulnerability Note VU#938151, CERT/CC, &lt;a href=&#34;https://www.kb.cert.org/vuls/id/938151&#34; target=&#34;_blank&#34;&gt;https://www.kb.cert.org/vuls/id/938151&lt;/a&gt;, 2016&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Forwarding Loop Attacks in Content Delivery Networks</title>
-      <link>/publication/forwarding-loop-attacks-in-content-delivery-networks/</link>
+      <link>https://www.jianjunchen.com/publication/forwarding-loop-attacks-in-content-delivery-networks/</link>
       <pubDate>Mon, 22 Feb 2016 11:03:35 +0800</pubDate>
       
-      <guid>/publication/forwarding-loop-attacks-in-content-delivery-networks/</guid>
+      <guid>https://www.jianjunchen.com/publication/forwarding-loop-attacks-in-content-delivery-networks/</guid>
       <description></description>
     </item>
     

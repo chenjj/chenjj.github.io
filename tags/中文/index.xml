@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>中文 on Jianjun Chen&#39;s Homepage</title>
-    <link>/tags/%E4%B8%AD%E6%96%87/</link>
+    <link>https://www.jianjunchen.com/tags/%E4%B8%AD%E6%96%87/</link>
     <description>Recent content in 中文 on Jianjun Chen&#39;s Homepage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Tue, 24 Jul 2018 12:56:52 +0800</lastBuildDate>
     
-	<atom:link href="/tags/%E4%B8%AD%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.jianjunchen.com/tags/%E4%B8%AD%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>绕过浏览器SOP，跨站窃取信息：CORS配置安全漏洞报告及最佳部署实践</title>
-      <link>/post/cors%E5%AE%89%E5%85%A8%E9%83%A8%E7%BD%B2%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+      <link>https://www.jianjunchen.com/post/cors%E5%AE%89%E5%85%A8%E9%83%A8%E7%BD%B2%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
       <pubDate>Tue, 24 Jul 2018 12:56:52 +0800</pubDate>
       
-      <guid>/post/cors%E5%AE%89%E5%85%A8%E9%83%A8%E7%BD%B2%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+      <guid>https://www.jianjunchen.com/post/cors%E5%AE%89%E5%85%A8%E9%83%A8%E7%BD%B2%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
       <description>简介 CORS（Cross-Origin Resource Sharing, 跨域资源共享）是HTML5的一个新特性，用于解决浏览器跨域网络资源访问，目前已经被所有浏览器支持，</description>
     </item>
     

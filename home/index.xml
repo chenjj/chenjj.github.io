@@ -2,132 +2,132 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Homes on Jianjun Chen&#39;s Homepage</title>
-    <link>/home/</link>
+    <link>https://www.jianjunchen.com/home/</link>
     <description>Recent content in Homes on Jianjun Chen&#39;s Homepage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0800</lastBuildDate>
     
-	<atom:link href="/home/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.jianjunchen.com/home/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>/home/about/</link>
+      <link>https://www.jianjunchen.com/home/about/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
-      <guid>/home/about/</guid>
+      <guid>https://www.jianjunchen.com/home/about/</guid>
       <description>Jianjun Chen is a PhD student at Tsinghua University supervised by Prof. Haixin Duan. He will go to UC Berkeley as a postdoctoral fellow under the direction of Prof. Vern Paxson in August 2018.
 Currently he has published multiple papers on the &amp;ldquo;Big 4&amp;rdquo; security conferences (NDSS, CCS, Usenix security and IEEE S&amp;amp;P). Among them, the NDSS paper on CDN forwarding loop attacks has won the conference&amp;rsquo;s &amp;ldquo;Distinguished Paper Award&amp;rdquo;. His research work are not only recognized by the academic community, but also help many well-known industrial companies(eg.</description>
     </item>
     
     <item>
       <title>Selected Publications</title>
-      <link>/home/publications_selected/</link>
+      <link>https://www.jianjunchen.com/home/publications_selected/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
-      <guid>/home/publications_selected/</guid>
+      <guid>https://www.jianjunchen.com/home/publications_selected/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Recent Publications</title>
-      <link>/home/publications/</link>
+      <link>https://www.jianjunchen.com/home/publications/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
-      <guid>/home/publications/</guid>
+      <guid>https://www.jianjunchen.com/home/publications/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Internship Experience</title>
-      <link>/home/intern/</link>
+      <link>https://www.jianjunchen.com/home/intern/</link>
       <pubDate>Mon, 20 Apr 2015 00:00:00 +0800</pubDate>
       
-      <guid>/home/intern/</guid>
+      <guid>https://www.jianjunchen.com/home/intern/</guid>
       <description> Nov 2017 - Feb 2018, Research Intern, Nanyang Technological University, Singapore Dec 2016 - Jun 2017, Research Intern, Baidu Security, Beijing Sep 2015 - Mar 2016, Research Intern, University of California, Berkeley, USA Sep 2013 - Jul 2015, Teaching Assistant, Tsinghua Univeristy  </description>
     </item>
     
     <item>
       <title>Activities</title>
-      <link>/home/activities/</link>
+      <link>https://www.jianjunchen.com/home/activities/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
-      <guid>/home/activities/</guid>
+      <guid>https://www.jianjunchen.com/home/activities/</guid>
       <description>Talks:  &amp;ldquo;Hacking Intranet from outside: security problems of Cross Origin Resource Sharing (CORS)&amp;ldquo;, DEF CON China, 2018, Beijing. &amp;ldquo;Host of Troubles attack&amp;rdquo;, The 2th China Cyber Security summit(CSS) 2016, Beijing. &amp;ldquo;Improving IPv6 Attack Detector&amp;rdquo;, Free and Open Source Software conference (FOSSAISA) 2014, Cambodia.  Selected vulnerabilities:  CVE-2016-4553, Squid team evaluated it as a highest level(blocker) security vulnerability, which allowed an attacker to remotely poison the cache of any HTTP website with arbitrary content.</description>
     </item>
     
     <item>
       <title>Awards &amp; Scholarships</title>
-      <link>/home/awards/</link>
+      <link>https://www.jianjunchen.com/home/awards/</link>
       <pubDate>Mon, 20 Apr 2015 00:00:00 +0800</pubDate>
       
-      <guid>/home/awards/</guid>
+      <guid>https://www.jianjunchen.com/home/awards/</guid>
       <description> Network Security Scholarship, China Internet Development Foundation, 2017 Distinguished Paper Award, Network and Distributed System Symposium (NDSS), 2016 National Scholarship, Ministry of Education, China, 2012 National Endeavor Scholarship, Ministry of Education, China, 2011  </description>
     </item>
     
     <item>
       <title>Projects</title>
-      <link>/home/projects/</link>
+      <link>https://www.jianjunchen.com/home/projects/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
-      <guid>/home/projects/</guid>
+      <guid>https://www.jianjunchen.com/home/projects/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Recent Posts</title>
-      <link>/home/posts/</link>
+      <link>https://www.jianjunchen.com/home/posts/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
-      <guid>/home/posts/</guid>
+      <guid>https://www.jianjunchen.com/home/posts/</guid>
       <description>Posts are coming soon&amp;hellip;</description>
     </item>
     
     <item>
       <title>Selected vulnerabilities</title>
-      <link>/home/vulnerabilities/</link>
+      <link>https://www.jianjunchen.com/home/vulnerabilities/</link>
       <pubDate>Mon, 20 Apr 2015 00:00:00 +0800</pubDate>
       
-      <guid>/home/vulnerabilities/</guid>
+      <guid>https://www.jianjunchen.com/home/vulnerabilities/</guid>
       <description> CVE-2016-4553, Squid team evaluated it as a highest level(blocker) security vulnerability, which allowed an attacker to remotely poison the cache of any HTTP website with arbitrary content. CVE-2016-4554, A critical security vulnerability in Squid, which was introduced to version 1.0 in 1996. VU#938151, A new Denial of Service(DoS) attack affecting 16 CDN vendors.  </description>
     </item>
     
     <item>
       <title>Custom Section</title>
-      <link>/home/teaching/</link>
+      <link>https://www.jianjunchen.com/home/teaching/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
-      <guid>/home/teaching/</guid>
+      <guid>https://www.jianjunchen.com/home/teaching/</guid>
       <description>This is an example of using the custom widget to create your own homepage section.
 To remove this section, either delete content/home/teaching.md or edit the frontmatter of the file to deactivate the widget by setting active = false.</description>
     </item>
     
     <item>
       <title>Media Reports</title>
-      <link>/home/media-reports/</link>
+      <link>https://www.jianjunchen.com/home/media-reports/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
-      <guid>/home/media-reports/</guid>
+      <guid>https://www.jianjunchen.com/home/media-reports/</guid>
       <description>&amp;ldquo;Popular cache Squid skids as hacker pops lid&amp;rdquo;, theregister.co.uk, 2016 &amp;ldquo;Preventing Malicious Request Loops&amp;rdquo;, blog.cloudflare.com, 2016 &amp;ldquo;清华博士陈建军 CDN 攻击研究获国际学术大奖&amp;rdquo;, freebuf.com, 2016</description>
     </item>
     
     <item>
       <title>Tags</title>
-      <link>/home/tags/</link>
+      <link>https://www.jianjunchen.com/home/tags/</link>
       <pubDate>Wed, 20 Sep 2017 00:00:00 +0800</pubDate>
       
-      <guid>/home/tags/</guid>
+      <guid>https://www.jianjunchen.com/home/tags/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Contact</title>
-      <link>/home/contact/</link>
+      <link>https://www.jianjunchen.com/home/contact/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0800</pubDate>
       
-      <guid>/home/contact/</guid>
+      <guid>https://www.jianjunchen.com/home/contact/</guid>
       <description></description>
     </item>
     

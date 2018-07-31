@@ -2,23 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>English on Jianjun Chen&#39;s Homepage</title>
-    <link>/tags/english/</link>
+    <link>https://www.jianjunchen.com/tags/english/</link>
     <description>Recent content in English on Jianjun Chen&#39;s Homepage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Mon, 23 Jul 2018 13:40:04 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 25 Feb 2016 23:16:10 +0800</lastBuildDate>
     
-	<atom:link href="/tags/english/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.jianjunchen.com/tags/english/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>CORS Secure Deployment Best Practice</title>
-      <link>/post/cors-secure-deployment-best-practice/</link>
-      <pubDate>Mon, 23 Jul 2018 13:40:04 +0800</pubDate>
+      <title>A new type of DoS attack affecting all 16 CDNs we tested</title>
+      <link>https://www.jianjunchen.com/post/cdn-loop-attacks/</link>
+      <pubDate>Thu, 25 Feb 2016 23:16:10 +0800</pubDate>
       
-      <guid>/post/cors-secure-deployment-best-practice/</guid>
-      <description></description>
+      <guid>https://www.jianjunchen.com/post/cdn-loop-attacks/</guid>
+      <description>Introduction Content Delivery Networks (CDNs) are important Internet infrastructure and improve the performance, scalability and security for websites. Therefore, attacks against availability of CDNs affect the reachability to a large amount of web sites.
+In this study, we present how malicious customers could attack the availability of CDN by creating forwarding loops inside one CDN or across multiple CDNs. Such forwarding loops cause one request to be processed repeatedly or even indefinitely, resulting in undesired resource consumption and potentially Denial-of-Service attacks.</description>
     </item>
     
   </channel>

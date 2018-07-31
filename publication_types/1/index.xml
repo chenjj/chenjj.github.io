@@ -2,49 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>1 on Jianjun Chen&#39;s Homepage</title>
-    <link>/publication_types/1/</link>
+    <link>https://www.jianjunchen.com/publication_types/1/</link>
     <description>Recent content in 1 on Jianjun Chen&#39;s Homepage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
     <lastBuildDate>Sun, 22 Jul 2018 11:23:39 +0800</lastBuildDate>
     
-	<atom:link href="/publication_types/1/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.jianjunchen.com/publication_types/1/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>We Still Don’t Have Secure Cross-Domain Requests: an Empirical Study of CORS</title>
-      <link>/publication/an-empirical-study-of-cors/</link>
+      <link>https://www.jianjunchen.com/publication/an-empirical-study-of-cors/</link>
       <pubDate>Sun, 22 Jul 2018 11:23:39 +0800</pubDate>
       
-      <guid>/publication/an-empirical-study-of-cors/</guid>
+      <guid>https://www.jianjunchen.com/publication/an-empirical-study-of-cors/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Host of Troubles： Multiple Host Ambiguities in HTTP Implementations</title>
-      <link>/publication/host-of-troubles-multiple-host-ambiguities-in-http-implementations/</link>
+      <link>https://www.jianjunchen.com/publication/host-of-troubles-multiple-host-ambiguities-in-http-implementations/</link>
       <pubDate>Sat, 22 Oct 2016 11:18:39 +0800</pubDate>
       
-      <guid>/publication/host-of-troubles-multiple-host-ambiguities-in-http-implementations/</guid>
+      <guid>https://www.jianjunchen.com/publication/host-of-troubles-multiple-host-ambiguities-in-http-implementations/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Seeking Nonsense, Looking for Trouble: Efficient Promotional-Infection Detection through Semantic Inconsistency Search</title>
-      <link>/publication/seeking-nonsense-looking-for-trouble-efficient-promotional-infection-detection-through-semantic-inconsistency-search/</link>
+      <link>https://www.jianjunchen.com/publication/seeking-nonsense-looking-for-trouble-efficient-promotional-infection-detection-through-semantic-inconsistency-search/</link>
       <pubDate>Fri, 22 Jul 2016 11:32:44 +0800</pubDate>
       
-      <guid>/publication/seeking-nonsense-looking-for-trouble-efficient-promotional-infection-detection-through-semantic-inconsistency-search/</guid>
+      <guid>https://www.jianjunchen.com/publication/seeking-nonsense-looking-for-trouble-efficient-promotional-infection-detection-through-semantic-inconsistency-search/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Forwarding Loop Attacks in Content Delivery Networks</title>
-      <link>/publication/forwarding-loop-attacks-in-content-delivery-networks/</link>
+      <link>https://www.jianjunchen.com/publication/forwarding-loop-attacks-in-content-delivery-networks/</link>
       <pubDate>Mon, 22 Feb 2016 11:03:35 +0800</pubDate>
       
-      <guid>/publication/forwarding-loop-attacks-in-content-delivery-networks/</guid>
+      <guid>https://www.jianjunchen.com/publication/forwarding-loop-attacks-in-content-delivery-networks/</guid>
       <description></description>
     </item>
     
