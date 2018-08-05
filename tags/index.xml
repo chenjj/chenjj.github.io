@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Thu, 25 Feb 2016 23:16:10 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 05 Oct 2017 21:23:28 +0800</lastBuildDate>
     
 	<atom:link href="https://www.jianjunchen.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Attack</title>
       <link>https://www.jianjunchen.com/tags/attack/</link>
-      <pubDate>Thu, 25 Feb 2016 23:16:10 +0800</pubDate>
+      <pubDate>Thu, 05 Oct 2017 21:23:28 +0800</pubDate>
       
       <guid>https://www.jianjunchen.com/tags/attack/</guid>
       <description></description>
@@ -24,7 +24,7 @@
     <item>
       <title>CDN</title>
       <link>https://www.jianjunchen.com/tags/cdn/</link>
-      <pubDate>Thu, 25 Feb 2016 23:16:10 +0800</pubDate>
+      <pubDate>Thu, 05 Oct 2017 21:23:28 +0800</pubDate>
       
       <guid>https://www.jianjunchen.com/tags/cdn/</guid>
       <description></description>
@@ -40,11 +40,38 @@
     </item>
     
     <item>
+      <title>Cache</title>
+      <link>https://www.jianjunchen.com/tags/cache/</link>
+      <pubDate>Thu, 05 Oct 2017 21:23:28 +0800</pubDate>
+      
+      <guid>https://www.jianjunchen.com/tags/cache/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>English</title>
       <link>https://www.jianjunchen.com/tags/english/</link>
-      <pubDate>Thu, 25 Feb 2016 23:16:10 +0800</pubDate>
+      <pubDate>Thu, 05 Oct 2017 21:23:28 +0800</pubDate>
       
       <guid>https://www.jianjunchen.com/tags/english/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Firewall</title>
+      <link>https://www.jianjunchen.com/tags/firewall/</link>
+      <pubDate>Thu, 05 Oct 2017 21:23:28 +0800</pubDate>
+      
+      <guid>https://www.jianjunchen.com/tags/firewall/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HTTP</title>
+      <link>https://www.jianjunchen.com/tags/http/</link>
+      <pubDate>Thu, 05 Oct 2017 21:23:28 +0800</pubDate>
+      
+      <guid>https://www.jianjunchen.com/tags/http/</guid>
       <description></description>
     </item>
     

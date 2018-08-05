@@ -272,6 +272,79 @@ Access-Control-Allow-Credentials: true
     </item>
     
     <item>
+      <title>Host of Troubles: a new class of attacks affecting caches, CDNs and firewalls</title>
+      <link>https://www.jianjunchen.com/post/host-of-troubles/</link>
+      <pubDate>Thu, 05 Oct 2017 21:23:28 +0800</pubDate>
+      
+      <guid>https://www.jianjunchen.com/post/host-of-troubles/</guid>
+      <description>
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;We discovered a new class of attacks that affect a wide range of HTTP implementations. The problem is that deployed systems are generally incorrect (non-compliant with RFC 7230) and inconsistent in parsing and interpreting “Host” headers in HTTP requests. This problem can be exploited by carefully crafting HTTP requests with ambiguous host information, inducing inconsistent interpretations between two parties. Such inconsistency can lead to severe security consequences, such as HTTP cache poisoning and security policy bypass.&lt;/p&gt;
+
+&lt;p&gt;By issuring one single carefully crafted HTTP request, an attacker can:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Poison the Squid cache of any HTTP website with arbitrary content. &lt;a href=&#34;#1-general-cache-poisoning-attack-against-transparent-cache-squid&#34;&gt;(Demo)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Poison Apache Traffic Server(ATS) cache for sites hosted on Akamai. &lt;a href=&#34;#2-exploiting-co-hosting-to-launch-attacks-against-transparent-caches-apache-traffic-server&#34;&gt;(Demo)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Poison Akamai CDN caches when Squid resides behind Akamai.&lt;a href=&#34;#3-exploiting-co-hosting-to-launch-attacks-against-akamai-cdn-caches&#34;&gt;(Demo)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Bypass Windows 8.1 filtering features. &lt;a href=&#34;#4-bypassing-parental-control-features-of-windows-8-1&#34;&gt;(Demo)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Bypass cloud-based WAF without accessing the origin directly.&lt;a href=&#34;https://www.jianjunchen.com/papers/host-of-troubles.CCS16.pdf&#34;&gt;(See our paper)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These attacks, especially the cache poisoning ones, have a significant impact in the current Internet because transparent cache proxies such as Squid and ATS are widely deployed by ISPs. We conducted large scale measurements of transparent caches on the Internet and discovered that around &lt;strong&gt;97% of users&lt;/strong&gt; served by such caches are subject to some of the cache-poisoning attacks we found.&lt;/p&gt;
+
+&lt;h2 id=&#34;full-paper&#34;&gt;Full Paper&lt;/h2&gt;
+
+&lt;p&gt;This work was published on ACM CCS 2016. (&lt;a href=&#34;https://www.jianjunchen.com/papers/host-of-troubles.CCS16.pdf&#34;&gt;Host of Troubles: Multiple Host Ambiguities in HTTP Implementations&lt;/a&gt;)&lt;/p&gt;
+
+&lt;h2 id=&#34;attack-demo-videos&#34;&gt;Attack Demo Videos&lt;/h2&gt;
+
+&lt;h3 id=&#34;1-general-cache-poisoning-attack-against-transparent-cache-squid&#34;&gt;1. General cache poisoning attack against transparent cache(Squid)&lt;/h3&gt;
+
+&lt;p&gt;We have demonstrated this attack for Squid-3.5.12, enabling cache poisoning of any unencrypted HTTP website. The scenario requires an attacker who can send HTTP requests that pass through a shared transparent cache(Squid 3.5.12). Note that attackers can readily obtain the necessary vantage point using techniques such as web ads. Squid has fixed this problem after our report. (You can also watch all the videos on Youtube.)&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/1qUtbICUYbQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h3 id=&#34;2-exploiting-co-hosting-to-launch-attacks-against-transparent-caches-apache-traffic-server&#34;&gt;2. Exploiting co-hosting to launch attacks against transparent caches (Apache Traffic Server)&lt;/h3&gt;
+
+&lt;p&gt;The second form exploits the situation where an attacker can obtain a web site hosted on the same server as a target web site, and the hosting server “cooperates” with a transparent cache to enable cache poisoning. Many co-hosting services such as Content Delivery Networks (CDNs) facilitate this attack. We have demonstrated this exploit on an Apache Traffic Server (ATS) 6.1.1, poisoning its cache of sites hosted on Akamai.&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/FwYG_LYzB7w&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h3 id=&#34;3-exploiting-co-hosting-to-launch-attacks-against-akamai-cdn-caches&#34;&gt;3. Exploiting co-hosting to launch attacks against Akamai CDN caches&lt;/h3&gt;
+
+&lt;p&gt;The attack is different with the second form. It poisons Akamai CDN cache when a Squid proxy resides between Akamai CDN and victim&amp;rsquo;s origin server. We have demonstrated this exploit on Akamai CDN. Akamai has fixed this problem after our report.&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/fBJyhmfB7Hw&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h3 id=&#34;4-bypassing-parental-control-features-of-windows-8-1&#34;&gt;4. Bypassing parental control features of Windows 8.1&lt;/h3&gt;
+
+&lt;p&gt;We have demonstrated this attack by bypassing the Parental Control of Windows 8.1, a host-based firewall, by issuing the following request, which is sent to a server for “block.com”:&lt;/p&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/SxKjRe8KYfA&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
       <title>Host of Troubles： Multiple Host Ambiguities in HTTP Implementations</title>
       <link>https://www.jianjunchen.com/publication/host-of-troubles-multiple-host-ambiguities-in-http-implementations/</link>
       <pubDate>Sat, 22 Oct 2016 11:18:39 +0800</pubDate>
@@ -290,7 +363,7 @@ Access-Control-Allow-Credentials: true
     </item>
     
     <item>
-      <title>A new type of DoS attack affecting all 16 CDNs we tested</title>
+      <title>A new type of DoS attacks affecting all 16 CDNs we tested</title>
       <link>https://www.jianjunchen.com/post/cdn-loop-attacks/</link>
       <pubDate>Thu, 25 Feb 2016 23:16:10 +0800</pubDate>
       

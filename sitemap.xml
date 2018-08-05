@@ -23,6 +23,15 @@
     
     <url>
     
+      <loc>https://www.jianjunchen.com/post/host-of-troubles/</loc>
+      <lastmod>2017-10-05T21:23:28+08:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://www.jianjunchen.com/post/</loc>
       <lastmod>2017-01-01T00:00:00+08:00</lastmod>
     </url>
@@ -97,7 +106,7 @@
     <url>
     
       <loc>https://www.jianjunchen.com/tags/attack/</loc>
-      <lastmod>2016-02-25T23:16:10+08:00</lastmod>
+      <lastmod>2017-10-05T21:23:28+08:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -107,7 +116,7 @@
     <url>
     
       <loc>https://www.jianjunchen.com/tags/cdn/</loc>
-      <lastmod>2016-02-25T23:16:10+08:00</lastmod>
+      <lastmod>2017-10-05T21:23:28+08:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -136,6 +145,16 @@
     
     <url>
     
+      <loc>https://www.jianjunchen.com/tags/cache/</loc>
+      <lastmod>2017-10-05T21:23:28+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://www.jianjunchen.com/categories/</loc>
       <lastmod>2016-02-25T23:16:10+08:00</lastmod>
       <priority>0</priority>
@@ -147,7 +166,37 @@
     <url>
     
       <loc>https://www.jianjunchen.com/tags/english/</loc>
-      <lastmod>2016-02-25T23:16:10+08:00</lastmod>
+      <lastmod>2017-10-05T21:23:28+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://www.jianjunchen.com/tags/firewall/</loc>
+      <lastmod>2017-10-05T21:23:28+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://www.jianjunchen.com/tags/http/</loc>
+      <lastmod>2017-10-05T21:23:28+08:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://www.jianjunchen.com/categories/http-security/</loc>
+      <lastmod>2017-10-05T21:23:28+08:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -177,7 +226,7 @@
     <url>
     
       <loc>https://www.jianjunchen.com/tags/</loc>
-      <lastmod>2016-02-25T23:16:10+08:00</lastmod>
+      <lastmod>2017-10-05T21:23:28+08:00</lastmod>
       <priority>0</priority>
     </url>
     

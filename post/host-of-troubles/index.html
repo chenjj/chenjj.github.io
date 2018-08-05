@@ -17,11 +17,10 @@
       
     
   
-  <meta name="description" content="陈建军的主页, Introduction Content Delivery Networks (CDNs) are important Internet infrastructure and improve the performance, scalability and security for websites. Therefore, attacks against availability of CDNs affect the reachability to a large amount of web sites.
-In this study, we present how malicious customers could attack the availability of CDN by creating forwarding loops inside one CDN or across multiple CDNs. Such forwarding loops cause one request to be processed repeatedly or even indefinitely, resulting in undesired resource consumption and potentially Denial-of-Service attacks.">
+  <meta name="description" content="陈建军的主页, Introduction We discovered a new class of attacks that affect a wide range of HTTP implementations. The problem is that deployed systems are generally incorrect (non-compliant with RFC 7230) and inconsistent in parsing and interpreting “Host” headers in HTTP requests. This problem can be exploited by carefully crafting HTTP requests with ambiguous host information, inducing inconsistent interpretations between two parties. Such inconsistency can lead to severe security consequences, such as HTTP cache poisoning and security policy bypass.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://www.jianjunchen.com/post/cdn-loop-attacks/">
+  <link rel="alternate" hreflang="en-us" href="https://www.jianjunchen.com/post/host-of-troubles/">
 
   
 
@@ -84,7 +83,7 @@ In this study, we present how malicious customers could attack the availability 
   <link rel="icon" type="image/png" href="/img/icon-32.jpeg">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://www.jianjunchen.com/post/cdn-loop-attacks/">
+  <link rel="canonical" href="https://www.jianjunchen.com/post/host-of-troubles/">
 
   <meta property="twitter:card" content="summary_large_image">
   
@@ -92,22 +91,21 @@ In this study, we present how malicious customers could attack the availability 
   <meta property="twitter:creator" content="@whucjj">
   
   <meta property="og:site_name" content="Jianjun Chen&#39;s Homepage">
-  <meta property="og:url" content="https://www.jianjunchen.com/post/cdn-loop-attacks/">
-  <meta property="og:title" content="A new type of DoS attacks affecting all 16 CDNs we tested | Jianjun Chen&#39;s Homepage">
-  <meta property="og:description" content="Introduction Content Delivery Networks (CDNs) are important Internet infrastructure and improve the performance, scalability and security for websites. Therefore, attacks against availability of CDNs affect the reachability to a large amount of web sites.
-In this study, we present how malicious customers could attack the availability of CDN by creating forwarding loops inside one CDN or across multiple CDNs. Such forwarding loops cause one request to be processed repeatedly or even indefinitely, resulting in undesired resource consumption and potentially Denial-of-Service attacks.">
+  <meta property="og:url" content="https://www.jianjunchen.com/post/host-of-troubles/">
+  <meta property="og:title" content="Host of Troubles: a new class of attacks affecting caches, CDNs and firewalls | Jianjun Chen&#39;s Homepage">
+  <meta property="og:description" content="Introduction We discovered a new class of attacks that affect a wide range of HTTP implementations. The problem is that deployed systems are generally incorrect (non-compliant with RFC 7230) and inconsistent in parsing and interpreting “Host” headers in HTTP requests. This problem can be exploited by carefully crafting HTTP requests with ambiguous host information, inducing inconsistent interpretations between two parties. Such inconsistency can lead to severe security consequences, such as HTTP cache poisoning and security policy bypass.">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2016-02-25T23:16:10&#43;08:00">
+  <meta property="article:published_time" content="2017-10-05T21:23:28&#43;08:00">
   
-  <meta property="article:modified_time" content="2016-02-25T23:16:10&#43;08:00">
-  
-
+  <meta property="article:modified_time" content="2017-10-05T21:23:28&#43;08:00">
   
 
   
 
-  <title>A new type of DoS attacks affecting all 16 CDNs we tested | Jianjun Chen&#39;s Homepage</title>
+  
+
+  <title>Host of Troubles: a new class of attacks affecting caches, CDNs and firewalls | Jianjun Chen&#39;s Homepage</title>
 
 <script>
 var _hmt = _hmt || [];
@@ -276,7 +274,7 @@ var _hmt = _hmt || [];
 
 
   <div class="article-container">
-    <h1 itemprop="name">A new type of DoS attacks affecting all 16 CDNs we tested</h1>
+    <h1 itemprop="name">Host of Troubles: a new class of attacks affecting caches, CDNs and firewalls</h1>
 
     
 
@@ -286,9 +284,9 @@ var _hmt = _hmt || [];
 
   <span class="article-date">
     
-    <meta content="2016-02-25 23:16:10 &#43;0800 CST" itemprop="datePublished">
-    <time datetime="2016-02-25 23:16:10 &#43;0800 CST" itemprop="dateModified">
-      Feb 25, 2016
+    <meta content="2017-10-05 21:23:28 &#43;0800 CST" itemprop="datePublished">
+    <time datetime="2017-10-05 21:23:28 &#43;0800 CST" itemprop="dateModified">
+      Oct 5, 2017
     </time>
   </span>
   <span itemscope itemprop="author publisher" itemtype="http://schema.org/Person">
@@ -298,7 +296,7 @@ var _hmt = _hmt || [];
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    2 min read
+    3 min read
   </span>
   
 
@@ -312,7 +310,7 @@ var _hmt = _hmt || [];
   <span class="article-categories">
     <i class="fa fa-folder"></i>
     
-    <a href="https://www.jianjunchen.com/categories/cdn-security/">CDN security</a
+    <a href="https://www.jianjunchen.com/categories/http-security/">HTTP security</a
     >
     
   </span>
@@ -325,35 +323,35 @@ var _hmt = _hmt || [];
   <ul class="share">
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=A%20new%20type%20of%20DoS%20attacks%20affecting%20all%2016%20CDNs%20we%20tested&amp;url=https%3a%2f%2fwww.jianjunchen.com%2fpost%2fcdn-loop-attacks%2f"
+         href="https://twitter.com/intent/tweet?text=Host%20of%20Troubles%3a%20a%20new%20class%20of%20attacks%20affecting%20caches%2c%20CDNs%20and%20firewalls&amp;url=https%3a%2f%2fwww.jianjunchen.com%2fpost%2fhost-of-troubles%2f"
          target="_blank" rel="noopener">
         <i class="fa fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.jianjunchen.com%2fpost%2fcdn-loop-attacks%2f"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.jianjunchen.com%2fpost%2fhost-of-troubles%2f"
          target="_blank" rel="noopener">
         <i class="fa fa-facebook"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.jianjunchen.com%2fpost%2fcdn-loop-attacks%2f&amp;title=A%20new%20type%20of%20DoS%20attacks%20affecting%20all%2016%20CDNs%20we%20tested"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fwww.jianjunchen.com%2fpost%2fhost-of-troubles%2f&amp;title=Host%20of%20Troubles%3a%20a%20new%20class%20of%20attacks%20affecting%20caches%2c%20CDNs%20and%20firewalls"
          target="_blank" rel="noopener">
         <i class="fa fa-linkedin"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fwww.jianjunchen.com%2fpost%2fcdn-loop-attacks%2f&amp;title=A%20new%20type%20of%20DoS%20attacks%20affecting%20all%2016%20CDNs%20we%20tested"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fwww.jianjunchen.com%2fpost%2fhost-of-troubles%2f&amp;title=Host%20of%20Troubles%3a%20a%20new%20class%20of%20attacks%20affecting%20caches%2c%20CDNs%20and%20firewalls"
          target="_blank" rel="noopener">
         <i class="fa fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=A%20new%20type%20of%20DoS%20attacks%20affecting%20all%2016%20CDNs%20we%20tested&amp;body=https%3a%2f%2fwww.jianjunchen.com%2fpost%2fcdn-loop-attacks%2f">
+         href="mailto:?subject=Host%20of%20Troubles%3a%20a%20new%20class%20of%20attacks%20affecting%20caches%2c%20CDNs%20and%20firewalls&amp;body=https%3a%2f%2fwww.jianjunchen.com%2fpost%2fhost-of-troubles%2f">
         <i class="fa fa-envelope"></i>
       </a>
     </li>
@@ -371,42 +369,66 @@ var _hmt = _hmt || [];
 
 <h2 id="introduction">Introduction</h2>
 
-<p>Content Delivery Networks (CDNs) are important Internet infrastructure and improve the performance, scalability and security for websites. Therefore, attacks against availability of CDNs affect the reachability to a large amount of web sites.</p>
+<p>We discovered a new class of attacks that affect a wide range of HTTP implementations. The problem is that deployed systems are generally incorrect (non-compliant with RFC 7230) and inconsistent in parsing and interpreting “Host” headers in HTTP requests. This problem can be exploited by carefully crafting HTTP requests with ambiguous host information, inducing inconsistent interpretations between two parties. Such inconsistency can lead to severe security consequences, such as HTTP cache poisoning and security policy bypass.</p>
 
-<p>In this study, we present how malicious customers could attack the availability of CDN by creating forwarding loops inside one CDN or across multiple CDNs. Such forwarding loops cause one request to be processed repeatedly or even indefinitely, resulting in undesired resource consumption and potentially Denial-of-Service attacks. We show that forwarding loop is a realistic and common threat against today’s commercial CDNs.  We examined 16 popular CDN providers, and found that all these CDNs are vulnerable to the forwarding loop attacks.  While some CDNs seem to be aware of this threat and have adopted specific forwarding loop detections, we discovered that all of them can be bypassed with new attacking techniques.  We also consider possible defenses. However, we found that, although conceptually simple, a comprehensive defense needs collaboration among all CDNs.</p>
-
-<p><img src="/img/blog/2018/cdn-loop.png" width="80%" title="A concept view of CDN forwarding loop attacks" style="margin-bottom:0px">
-<center>A concept view of CDN forwarding loop attacks</center></p>
-
-<h2 id="vendor-responses">Vendor Responses</h2>
-
-<p>We reported these attacks to affected CDN vendors. Here are some of their responses:</p>
+<p>By issuring one single carefully crafted HTTP request, an attacker can:</p>
 
 <ul>
-<li><strong>CloudFlare and Baidu:</strong> implemented  the RFC 7230-compliant Via header in their CDN systems. Cloudflare also
-wrote a blog to introduce our paper and explained how they defend this attack[1].<br /></li>
-<li><strong>Tencent:</strong> evaluated the problem as a high-risk vulnerability. They stated that they view it as indeed a problem for the CDN industry. They thanked us for our report and provided some rewards.</li>
-<li><strong>CDN77 and CDNsun:</strong> changed their system to not reset Via header.<br /></li>
-<li><strong>Fastly:</strong> acknowledged and discussed our report with us. They also offered several T-shirts as a token of gratitude.</li>
-<li><strong>Akamai:</strong> acknowledged our report and published an response to our paper[2].</li>
-<li><strong>CERT/CC:</strong> acknowledged our report and assigned a VU number(#938151) to track this problem[3].<br /></li>
-<li><strong>Verizon (EdgeCast):</strong> contacted us to discuss the problem after learning of this issue from one of their clients, even though we did not include their service in our study. They stated that this problem is valid and can be a great danger to CDNs and the Internet in general.</li>
+<li>Poison the Squid cache of any HTTP website with arbitrary content. <a href="#1-general-cache-poisoning-attack-against-transparent-cache-squid">(Demo)</a></li>
+<li>Poison Apache Traffic Server(ATS) cache for sites hosted on Akamai. <a href="#2-exploiting-co-hosting-to-launch-attacks-against-transparent-caches-apache-traffic-server">(Demo)</a></li>
+<li>Poison Akamai CDN caches when Squid resides behind Akamai.<a href="#3-exploiting-co-hosting-to-launch-attacks-against-akamai-cdn-caches">(Demo)</a></li>
+<li>Bypass Windows 8.1 filtering features. <a href="#4-bypassing-parental-control-features-of-windows-8-1">(Demo)</a></li>
+<li>Bypass cloud-based WAF without accessing the origin directly.<a href="/papers/host-of-troubles.CCS16.pdf">(See our paper)</a></li>
+<li>&hellip;</li>
 </ul>
 
-<h2 id="full-paper">Full paper</h2>
+<p>These attacks, especially the cache poisoning ones, have a significant impact in the current Internet because transparent cache proxies such as Squid and ATS are widely deployed by ISPs. We conducted large scale measurements of transparent caches on the Internet and discovered that around <strong>97% of users</strong> served by such caches are subject to some of the cache-poisoning attacks we found.</p>
 
-<p>This work(&rdquo;<a href="/papers/cdn-loops.NDSS16.pdf">Forwarding Loop Attacks in Content Delivery Networks</a>&rdquo;) was published on NDSS 2016, and won the distinguished paper award.</p>
+<h2 id="full-paper">Full Paper</h2>
 
-<p><img src="/img/blog/2018/ndss16-award.jpg" width="60%" title="Distinguished Paper Award in NDSS 2016" style="margin-bottom:0px">
-<center>Distinguished Paper Award in NDSS 2016</center></p>
+<p>This work was published on ACM CCS 2016. (<a href="/papers/host-of-troubles.CCS16.pdf">Host of Troubles: Multiple Host Ambiguities in HTTP Implementations</a>)</p>
 
-<h2 id="references">References</h2>
+<h2 id="attack-demo-videos">Attack Demo Videos</h2>
 
-<ol>
-<li>Preventing Malicious Request Loops, Nick Sullivan, <a href="https://blog.cloudflare.com/preventing-malicious-request-loops" target="_blank">https://blog.cloudflare.com/preventing-malicious-request-loops</a>, 2016</li>
-<li>Akamai Response To &ldquo;Forwarding-Loop&rdquo; Issue, <a href="https://blogs.akamai.com/2016/03/akamai-response-to-forwarding-loop-issue.html" target="_blank">https://blogs.akamai.com/2016/03/akamai-response-to-forwarding-loop-issue.html</a>, 2016</li>
-<li>Vulnerability Note VU#938151, CERT/CC, <a href="https://www.kb.cert.org/vuls/id/938151" target="_blank">https://www.kb.cert.org/vuls/id/938151</a>, 2016</li>
-</ol>
+<h3 id="1-general-cache-poisoning-attack-against-transparent-cache-squid">1. General cache poisoning attack against transparent cache(Squid)</h3>
+
+<p>We have demonstrated this attack for Squid-3.5.12, enabling cache poisoning of any unencrypted HTTP website. The scenario requires an attacker who can send HTTP requests that pass through a shared transparent cache(Squid 3.5.12). Note that attackers can readily obtain the necessary vantage point using techniques such as web ads. Squid has fixed this problem after our report. (You can also watch all the videos on Youtube.)</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/1qUtbICUYbQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<h3 id="2-exploiting-co-hosting-to-launch-attacks-against-transparent-caches-apache-traffic-server">2. Exploiting co-hosting to launch attacks against transparent caches (Apache Traffic Server)</h3>
+
+<p>The second form exploits the situation where an attacker can obtain a web site hosted on the same server as a target web site, and the hosting server “cooperates” with a transparent cache to enable cache poisoning. Many co-hosting services such as Content Delivery Networks (CDNs) facilitate this attack. We have demonstrated this exploit on an Apache Traffic Server (ATS) 6.1.1, poisoning its cache of sites hosted on Akamai.</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/FwYG_LYzB7w" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<h3 id="3-exploiting-co-hosting-to-launch-attacks-against-akamai-cdn-caches">3. Exploiting co-hosting to launch attacks against Akamai CDN caches</h3>
+
+<p>The attack is different with the second form. It poisons Akamai CDN cache when a Squid proxy resides between Akamai CDN and victim&rsquo;s origin server. We have demonstrated this exploit on Akamai CDN. Akamai has fixed this problem after our report.</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/fBJyhmfB7Hw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<h3 id="4-bypassing-parental-control-features-of-windows-8-1">4. Bypassing parental control features of Windows 8.1</h3>
+
+<p>We have demonstrated this attack by bypassing the Parental Control of Windows 8.1, a host-based firewall, by issuing the following request, which is sent to a server for “block.com”:</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/SxKjRe8KYfA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
 
     </div>
 
@@ -415,7 +437,13 @@ wrote a blog to introduce our paper and explained how they defend this attack[1]
 
 <div class="article-tags">
   
+  <a class="label label-default" href="https://www.jianjunchen.com/tags/http/">HTTP</a>
+  
   <a class="label label-default" href="https://www.jianjunchen.com/tags/cdn/">CDN</a>
+  
+  <a class="label label-default" href="https://www.jianjunchen.com/tags/firewall/">Firewall</a>
+  
+  <a class="label label-default" href="https://www.jianjunchen.com/tags/cache/">Cache</a>
   
   <a class="label label-default" href="https://www.jianjunchen.com/tags/attack/">Attack</a>
   
@@ -427,6 +455,16 @@ wrote a blog to introduce our paper and explained how they defend this attack[1]
 
 
     
+    
+    <div class="article-widget">
+      <div class="hr-light"></div>
+      <h3>Related</h3>
+      <ul>
+        
+        <li><a href="/post/cdn-loop-attacks/">A new type of DoS attacks affecting all 16 CDNs we tested</a></li>
+        
+      </ul>
+    </div>
     
 
     
