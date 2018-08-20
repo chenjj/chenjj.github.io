@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 -0800</lastBuildDate>
     
 	<atom:link href="https://www.jianjunchen.com/publication/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,14 +15,14 @@
     <item>
       <title>We Still Don’t Have Secure Cross-Domain Requests: an Empirical Study of CORS</title>
       <link>https://www.jianjunchen.com/publication/an-empirical-study-of-cors/</link>
-      <pubDate>Sun, 22 Jul 2018 11:23:39 +0800</pubDate>
+      <pubDate>Sun, 05 Aug 2018 11:23:39 +0800</pubDate>
       
       <guid>https://www.jianjunchen.com/publication/an-empirical-study-of-cors/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Host of Troubles： Multiple Host Ambiguities in HTTP Implementations</title>
+      <title>Host of Troubles: Multiple Host Ambiguities in HTTP Implementations</title>
       <link>https://www.jianjunchen.com/publication/host-of-troubles-multiple-host-ambiguities-in-http-implementations/</link>
       <pubDate>Sat, 22 Oct 2016 11:18:39 +0800</pubDate>
       

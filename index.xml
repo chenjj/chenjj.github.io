@@ -7,8 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 -0700</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>We Still Don’t Have Secure Cross-Domain Requests: an Empirical Study of CORS</title>
+      <link>https://www.jianjunchen.com/publication/an-empirical-study-of-cors/</link>
+      <pubDate>Sun, 05 Aug 2018 11:23:39 +0800</pubDate>
+      
+      <guid>https://www.jianjunchen.com/publication/an-empirical-study-of-cors/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>绕过浏览器SOP，跨站窃取信息：CORS配置安全漏洞报告及最佳部署实践</title>
@@ -263,15 +272,6 @@ Access-Control-Allow-Credentials: true
     </item>
     
     <item>
-      <title>We Still Don’t Have Secure Cross-Domain Requests: an Empirical Study of CORS</title>
-      <link>https://www.jianjunchen.com/publication/an-empirical-study-of-cors/</link>
-      <pubDate>Sun, 22 Jul 2018 11:23:39 +0800</pubDate>
-      
-      <guid>https://www.jianjunchen.com/publication/an-empirical-study-of-cors/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Host of Troubles: a new class of attacks affecting caches, CDNs and firewalls</title>
       <link>https://www.jianjunchen.com/post/host-of-troubles/</link>
       <pubDate>Thu, 05 Oct 2017 21:23:28 +0800</pubDate>
@@ -345,7 +345,7 @@ Access-Control-Allow-Credentials: true
     </item>
     
     <item>
-      <title>Host of Troubles： Multiple Host Ambiguities in HTTP Implementations</title>
+      <title>Host of Troubles: Multiple Host Ambiguities in HTTP Implementations</title>
       <link>https://www.jianjunchen.com/publication/host-of-troubles-multiple-host-ambiguities-in-http-implementations/</link>
       <pubDate>Sat, 22 Oct 2016 11:18:39 +0800</pubDate>
       
