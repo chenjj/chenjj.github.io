@@ -13,11 +13,38 @@
     
     
     <item>
+      <title>Composition Kills: A Case Study of Email Sender Authentication</title>
+      <link>https://www.jianjunchen.com/publication/composition-kills-a-case-study-of-email-sender-authentication/</link>
+      <pubDate>Sun, 01 Mar 2020 11:23:39 +0800</pubDate>
+      
+      <guid>https://www.jianjunchen.com/publication/composition-kills-a-case-study-of-email-sender-authentication/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CDN Judo : Breaking the CDN DoS Protection with Itself</title>
+      <link>https://www.jianjunchen.com/publication/cdn-judo-breaking-cdn-dos-protection-with-itself/</link>
+      <pubDate>Tue, 25 Feb 2020 11:18:39 +0800</pubDate>
+      
+      <guid>https://www.jianjunchen.com/publication/cdn-judo-breaking-cdn-dos-protection-with-itself/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>We Still Don’t Have Secure Cross-Domain Requests: an Empirical Study of CORS</title>
       <link>https://www.jianjunchen.com/publication/an-empirical-study-of-cors/</link>
       <pubDate>Sun, 05 Aug 2018 11:23:39 +0800</pubDate>
       
       <guid>https://www.jianjunchen.com/publication/an-empirical-study-of-cors/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Abusing CDNs for Fun and Profit: Security Issues in CDNs’ Origin Validation</title>
+      <link>https://www.jianjunchen.com/publication/abusing-cdns-for-fun-and-profit-security-issues-in-cdns-origin-validation/</link>
+      <pubDate>Sun, 25 Feb 2018 11:18:39 +0800</pubDate>
+      
+      <guid>https://www.jianjunchen.com/publication/abusing-cdns-for-fun-and-profit-security-issues-in-cdns-origin-validation/</guid>
       <description></description>
     </item>
     

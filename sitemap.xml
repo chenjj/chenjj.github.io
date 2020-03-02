@@ -4,6 +4,22 @@
     
     <url>
     
+      <loc>https://www.jianjunchen.com/publication/composition-kills-a-case-study-of-email-sender-authentication/</loc>
+      <lastmod>2020-03-01T11:23:39+08:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://www.jianjunchen.com/publication/cdn-judo-breaking-cdn-dos-protection-with-itself/</loc>
+      <lastmod>2020-02-25T11:18:39+08:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
       <loc>https://www.jianjunchen.com/publication/an-empirical-study-of-cors/</loc>
       <lastmod>2018-08-05T11:23:39+08:00</lastmod>
     </url>
@@ -14,6 +30,14 @@
     
       <loc>https://www.jianjunchen.com/post/cors%E5%AE%89%E5%85%A8%E9%83%A8%E7%BD%B2%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</loc>
       <lastmod>2018-08-01T12:56:52+08:00</lastmod>
+    </url>
+    
+  
+    
+    <url>
+    
+      <loc>https://www.jianjunchen.com/publication/abusing-cdns-for-fun-and-profit-security-issues-in-cdns-origin-validation/</loc>
+      <lastmod>2018-02-25T11:18:39+08:00</lastmod>
     </url>
     
   
@@ -85,7 +109,7 @@
     <url>
     
       <loc>https://www.jianjunchen.com/publication_types/1/</loc>
-      <lastmod>2018-08-05T11:23:39+08:00</lastmod>
+      <lastmod>2020-03-01T11:23:39+08:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -193,7 +217,7 @@
     <url>
     
       <loc>https://www.jianjunchen.com/publication_types/</loc>
-      <lastmod>2018-08-05T11:23:39+08:00</lastmod>
+      <lastmod>2020-03-01T11:23:39+08:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -253,6 +277,13 @@
   
     
       <url>
+      <loc>https://www.jianjunchen.com/papers/cdn-judo.NDSS20.pdf</loc>
+      <lastmod>2020-02-18T03:10:10-08:00</lastmod>
+    </url>
+    
+  
+    
+      <url>
       <loc>https://www.jianjunchen.com/papers/cdn-judo.NDSS20.slides.pdf</loc>
       <lastmod>2020-02-28T22:35:07-08:00</lastmod>
     </url>
@@ -269,6 +300,13 @@
       <url>
       <loc>https://www.jianjunchen.com/papers/cdn-loops.NDSS16.slides.pdf</loc>
       <lastmod>2018-07-22T23:48:24-07:00</lastmod>
+    </url>
+    
+  
+    
+      <url>
+      <loc>https://www.jianjunchen.com/papers/cdn-origin-validation.SDRS18.pdf</loc>
+      <lastmod>2018-07-25T15:07:48-07:00</lastmod>
     </url>
     
   
