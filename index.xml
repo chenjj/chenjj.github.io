@@ -270,7 +270,7 @@ Access-Control-Allow-Credentials: true
 &lt;li&gt;增加 Vary: Origin 头&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;我们将CORS漏洞扫描工具 &lt;a href=&#34;https://github.com/chenjj/CORScanner&#34; target=&#34;_blank&#34;&gt;CORScanner&lt;/a&gt; 开源在 Github上，便于Web 开发者检测网站是否存在上述几种不安全配置。&lt;/p&gt;
+&lt;p&gt;我们将CORS漏洞扫描工具 &lt;a href=&#34;https://github.com/chenjj/CORScanner&#34; rel=&#34;nofollow&#34; target=&#34;_blank&#34;&gt;CORScanner&lt;/a&gt; 开源在 Github上，便于Web 开发者检测网站是否存在上述几种不安全配置。&lt;/p&gt;
 
 &lt;h2 id=&#34;五-总结&#34;&gt;五、总结&lt;/h2&gt;
 
@@ -280,11 +280,11 @@ Access-Control-Allow-Credentials: true
 
 &lt;ol&gt;
 &lt;li&gt;CHEN J., Jiang J., DUAN H.-X., WAN T., CHEN S., Vern P., YANG M. We still don’t have secure cross-domain requests: An empirical study of CORS, In USENIX Security Symposium, 2018&lt;/li&gt;
-&lt;li&gt;CORS漏洞扫描工具CORScanner, &lt;a href=&#34;https://github.com/chenjj/CORScanner&#34; target=&#34;_blank&#34;&gt;https://github.com/chenjj/CORScanner&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Yii2 CORS误配置漏洞报告，&lt;a href=&#34;https://github.com/yiisoft/yii2/issues/16193&#34; target=&#34;_blank&#34;&gt;https://github.com/yiisoft/yii2/issues/16193&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;ASP.net 误配置漏洞报告，&lt;a href=&#34;https://github.com/aspnet/Home/issues/3106&#34; target=&#34;_blank&#34;&gt;https://github.com/aspnet/Home/issues/3106&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Go-CORS误配置漏洞报告，&lt;a href=&#34;https://github.com/rs/cors/issues/55&#34; target=&#34;_blank&#34;&gt;https://github.com/rs/cors/issues/55&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;CVE-2018-8014，&lt;a href=&#34;https://nvd.nist.gov/vuln/detail/CVE-2018-8014&#34; target=&#34;_blank&#34;&gt;https://nvd.nist.gov/vuln/detail/CVE-2018-8014&lt;/a&gt;, 2018&lt;/li&gt;
+&lt;li&gt;CORS漏洞扫描工具CORScanner, &lt;a href=&#34;https://github.com/chenjj/CORScanner&#34; rel=&#34;nofollow&#34; target=&#34;_blank&#34;&gt;https://github.com/chenjj/CORScanner&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Yii2 CORS误配置漏洞报告，&lt;a href=&#34;https://github.com/yiisoft/yii2/issues/16193&#34; rel=&#34;nofollow&#34; target=&#34;_blank&#34;&gt;https://github.com/yiisoft/yii2/issues/16193&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ASP.net 误配置漏洞报告，&lt;a href=&#34;https://github.com/aspnet/Home/issues/3106&#34; rel=&#34;nofollow&#34; target=&#34;_blank&#34;&gt;https://github.com/aspnet/Home/issues/3106&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Go-CORS误配置漏洞报告，&lt;a href=&#34;https://github.com/rs/cors/issues/55&#34; rel=&#34;nofollow&#34; target=&#34;_blank&#34;&gt;https://github.com/rs/cors/issues/55&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;CVE-2018-8014，&lt;a href=&#34;https://nvd.nist.gov/vuln/detail/CVE-2018-8014&#34; rel=&#34;nofollow&#34; target=&#34;_blank&#34;&gt;https://nvd.nist.gov/vuln/detail/CVE-2018-8014&lt;/a&gt;, 2018&lt;/li&gt;
 &lt;/ol&gt;
 </description>
     </item>
@@ -431,9 +431,9 @@ wrote a blog to introduce our paper and explained how they defend this attack[1]
 &lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
 
 &lt;ol&gt;
-&lt;li&gt;Preventing Malicious Request Loops, Nick Sullivan, &lt;a href=&#34;https://blog.cloudflare.com/preventing-malicious-request-loops&#34; target=&#34;_blank&#34;&gt;https://blog.cloudflare.com/preventing-malicious-request-loops&lt;/a&gt;, 2016&lt;/li&gt;
-&lt;li&gt;Akamai Response To &amp;ldquo;Forwarding-Loop&amp;rdquo; Issue, &lt;a href=&#34;https://blogs.akamai.com/2016/03/akamai-response-to-forwarding-loop-issue.html&#34; target=&#34;_blank&#34;&gt;https://blogs.akamai.com/2016/03/akamai-response-to-forwarding-loop-issue.html&lt;/a&gt;, 2016&lt;/li&gt;
-&lt;li&gt;Vulnerability Note VU#938151, CERT/CC, &lt;a href=&#34;https://www.kb.cert.org/vuls/id/938151&#34; target=&#34;_blank&#34;&gt;https://www.kb.cert.org/vuls/id/938151&lt;/a&gt;, 2016&lt;/li&gt;
+&lt;li&gt;Preventing Malicious Request Loops, Nick Sullivan, &lt;a href=&#34;https://blog.cloudflare.com/preventing-malicious-request-loops&#34; rel=&#34;nofollow&#34; target=&#34;_blank&#34;&gt;https://blog.cloudflare.com/preventing-malicious-request-loops&lt;/a&gt;, 2016&lt;/li&gt;
+&lt;li&gt;Akamai Response To &amp;ldquo;Forwarding-Loop&amp;rdquo; Issue, &lt;a href=&#34;https://blogs.akamai.com/2016/03/akamai-response-to-forwarding-loop-issue.html&#34; rel=&#34;nofollow&#34; target=&#34;_blank&#34;&gt;https://blogs.akamai.com/2016/03/akamai-response-to-forwarding-loop-issue.html&lt;/a&gt;, 2016&lt;/li&gt;
+&lt;li&gt;Vulnerability Note VU#938151, CERT/CC, &lt;a href=&#34;https://www.kb.cert.org/vuls/id/938151&#34; rel=&#34;nofollow&#34; target=&#34;_blank&#34;&gt;https://www.kb.cert.org/vuls/id/938151&lt;/a&gt;, 2016&lt;/li&gt;
 &lt;/ol&gt;
 </description>
     </item>
