@@ -5,7 +5,7 @@
     <url>
     
       <loc>https://www.jianjunchen.com/publication/composition-kills-a-case-study-of-email-sender-authentication/</loc>
-      <lastmod>2020-03-01T11:23:39+08:00</lastmod>
+      <lastmod>2020-04-15T11:23:39+08:00</lastmod>
     </url>
     
   
@@ -109,7 +109,7 @@
     <url>
     
       <loc>https://www.jianjunchen.com/publication_types/1/</loc>
-      <lastmod>2020-03-01T11:23:39+08:00</lastmod>
+      <lastmod>2020-04-15T11:23:39+08:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -217,7 +217,7 @@
     <url>
     
       <loc>https://www.jianjunchen.com/publication_types/</loc>
-      <lastmod>2020-03-01T11:23:39+08:00</lastmod>
+      <lastmod>2020-04-15T11:23:39+08:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -307,6 +307,13 @@
       <url>
       <loc>https://www.jianjunchen.com/papers/cdn-origin-validation.SDRS18.pdf</loc>
       <lastmod>2018-07-25T15:07:48-07:00</lastmod>
+    </url>
+    
+  
+    
+      <url>
+      <loc>https://www.jianjunchen.com/papers/composition-kills.USESEC20.pdf</loc>
+      <lastmod>2020-03-01T16:23:25-08:00</lastmod>
     </url>
     
   
