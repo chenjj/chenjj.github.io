@@ -1,12 +1,15 @@
 
 <!DOCTYPE html>
-<link rel="stylesheet" href="css/my.css">
 <html>
 <head>
+    <link rel="preload" as="style" href="css/my.css">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Jianjun Chen | Tsinghua University</title>
     <meta name="description" content="Jianjun Chen" />
-</head>
+    <link rel="preload" as="image" href="img/jianjun.jpg">
+    <link rel="preload" as="style" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/my.css">
+
 <script>
     var _hmt = _hmt || [];
     (function() {
@@ -26,9 +29,9 @@
     ga('send', 'pageview');
   </script>
   <script async src="https://www.google-analytics.com/analytics.js"></script>
-  <script src="https://tr.jianjunchen.com/tr.js"></script>
+  
+</head>
 <body>
-    <link rel="stylesheet" href="css/font-awesome.min.css">
     <div id="header">
     </div>
 
@@ -441,7 +444,12 @@ CDN system, email system, web browsers.
     </tr>
 
 </table>
-
+<script>
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'https://tr.jianjunchen.com/tr.js');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.send('referrer=' + encodeURIComponent(document.referrer));
+</script>
 </body>
 </html>
 
