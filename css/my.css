@@ -211,12 +211,35 @@ nav a:hover {
   margin-right: 0.0em;
 }
 
+.profile-table {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.profile-table-cell {
+  flex: 1;
+}
+.profile-table-cell img {
+width: 100%;
+max-width: 190px;
+}
+
+.profile-table-cell:nth-child(2) {
+flex-basis: 50%;
+}
+
+@media (max-width: 768px) {
+  .profile-table-cell {
+    min-width: 100%;
+  }
+}
+
 table {
   margin-top: 0px;
   border: 0px;
   padding-top: 0px;
   border-collapse: separate;
-  border-spacing: 1em; /* 1em */
+  border-spacing: 0.5em; /* 1em */
   width: 100%;
   line-height: 130%;
 }
