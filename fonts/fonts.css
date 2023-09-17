@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: url(PT+Sans_400_normal.eot); /* http://fonts.gstatic.com/s/ptsans/v17/jizaRExUiTo99u79D0KEwQ.eot */
+    src: local('☺'),
+        url(PT+Sans_400_normal.eot?#iefix) format('embedded-opentype'), /* http://fonts.gstatic.com/s/ptsans/v17/jizaRExUiTo99u79D0KEwQ.eot */
+        url(PT+Sans_400_normal.woff2) format('woff2'), /* http://fonts.gstatic.com/s/ptsans/v17/jizaRExUiTo99u79D0KExQ.woff2 */
+        url(PT+Sans_400_normal.woff) format('woff'), /* http://fonts.gstatic.com/s/ptsans/v17/jizaRExUiTo99u79D0KEww.woff */
+        url(PT+Sans_400_normal.ttf) format('truetype'), /* http://fonts.gstatic.com/s/ptsans/v17/jizaRExUiTo99u79D0KEwMOPIDU.ttf */
+        url(PT+Sans_400_normal.svg#PT+Sans_400_normal) format('svg'); /* http://fonts.gstatic.com/l/font?kit=jizaRExUiTo99u79D0KEwg&skey=fd0b32f0f3e6a1fc&v=v17#PTSans */
+}
+@font-face {
+    font-family: 'PT Sans Narrow';
+    font-style: normal;
+    font-weight: 400;
+    src: url(PT+Sans+Narrow_400_normal.eot); /* http://fonts.gstatic.com/s/ptsansnarrow/v18/BngRUXNadjH0qYEzV7ab-oWlsbCGwRk.eot */
+    src: local('☺'),
+        url(PT+Sans+Narrow_400_normal.eot?#iefix) format('embedded-opentype'), /* http://fonts.gstatic.com/s/ptsansnarrow/v18/BngRUXNadjH0qYEzV7ab-oWlsbCGwRk.eot */
+        url(PT+Sans+Narrow_400_normal.woff2) format('woff2'), /* http://fonts.gstatic.com/s/ptsansnarrow/v18/BngRUXNadjH0qYEzV7ab-oWlsbCGwR0.woff2 */
+        url(PT+Sans+Narrow_400_normal.woff) format('woff'), /* http://fonts.gstatic.com/s/ptsansnarrow/v18/BngRUXNadjH0qYEzV7ab-oWlsbCGwRs.woff */
+        url(PT+Sans+Narrow_400_normal.ttf) format('truetype'), /* http://fonts.gstatic.com/s/ptsansnarrow/v18/BngRUXNadjH0qYEzV7ab-oWlsbCGwRioefDo.ttf */
+        url(PT+Sans+Narrow_400_normal.svg#PT+Sans+Narrow_400_normal) format('svg'); /* http://fonts.gstatic.com/l/font?kit=BngRUXNadjH0qYEzV7ab-oWlsbCGwRo&skey=4fa1436033972818&v=v18#PTSansNarrow */
+}
+@font-face {
+    font-family: 'PT Sans Narrow';
+    font-style: normal;
+    font-weight: 700;
+    src: url(PT+Sans+Narrow_700_normal.eot); /* {{embedded-opentype-gf-url}} */
+    src: local('☺'),
+        url(PT+Sans+Narrow_700_normal.eot?#iefix) format('embedded-opentype'), /* {{embedded-opentype-gf-url}} */
+        url(PT+Sans+Narrow_700_normal.woff2) format('woff2'), /* http://fonts.gstatic.com/s/ptsansnarrow/v18/BngSUXNadjH0qYEzV7ab-oWlsbg95AiFW_0.woff2 */
+        url(PT+Sans+Narrow_700_normal.woff) format('woff'), /* http://fonts.gstatic.com/s/ptsansnarrow/v18/BngSUXNadjH0qYEzV7ab-oWlsbg95AiFW_s.woff */
+        url(PT+Sans+Narrow_700_normal.ttf) format('truetype'), /* http://fonts.gstatic.com/s/ptsansnarrow/v18/BngSUXNadjH0qYEzV7ab-oWlsbg95AiFW_jCRs-2.ttf */
+        url(PT+Sans+Narrow_700_normal.svg#PT+Sans+Narrow_700_normal) format('svg'); /* {{svg-gf-url}} */
+}
+@font-face {
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 400;
+    src: url(Inconsolata_400_normal.eot); /* http://fonts.gstatic.com/s/inconsolata/v32/QldgNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLYxYWI2qfdm7Lpp4U8WR32kw.eot */
+    src: local('☺'),
+        url(Inconsolata_400_normal.eot?#iefix) format('embedded-opentype'), /* http://fonts.gstatic.com/s/inconsolata/v32/QldgNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLYxYWI2qfdm7Lpp4U8WR32kw.eot */
+        url(Inconsolata_400_normal.woff2) format('woff2'), /* http://fonts.gstatic.com/s/inconsolata/v32/QldgNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLYxYWI2qfdm7Lpp4U8WR32lw.woff2 */
+        url(Inconsolata_400_normal.woff) format('woff'), /* http://fonts.gstatic.com/s/inconsolata/v32/QldgNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLYxYWI2qfdm7Lpp4U8WR32kQ.woff */
+        url(Inconsolata_400_normal.ttf) format('truetype'), /* http://fonts.gstatic.com/s/inconsolata/v32/QldgNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLYxYWI2qfdm7Lpp4U8WR32knWdycu5Dw.ttf */
+        url(Inconsolata_400_normal.svg#Inconsolata_400_normal) format('svg'); /* http://fonts.gstatic.com/l/font?kit=QldgNThLqRwH-OJ1UHjlKENVzkWGVkL3GZQmAwLYxYWI2qfdm7Lpp4U8WR32kA&skey=20fa6569a31c71ee&v=v32#Inconsolata */
+}
