@@ -425,3 +425,13 @@ p {
   /* color: #7676ee !important; */
   border-color: #000080 !important;
 }
+
+.bibtex {
+  display: none;
+  padding: 10px;
+  margin-top: 5px;
+  background-color: #f7f7f7;
+  border-left: 3px solid #ccc;
+  font-family: monospace;
+  white-space: pre-wrap;
+}
